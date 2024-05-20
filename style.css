@@ -1,0 +1,130 @@
+:root {
+    --cube-width: 300px;
+    --translateZ: 150px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+    background: #d8d8d8;
+    text-align: center;
+}
+
+header {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cube-container {
+    perspective: 1000px;
+    margin: auto;
+}
+  
+.cube-container .cube {
+    width: var(--cube-width);
+    height: var(--cube-width);
+    transform-style: preserve-3d;
+}
+
+.cube-container .cube-face {
+    width: var(--cube-width);
+    height: var(--cube-width);
+    position: absolute;
+    font-size: 30px;
+    background: yellow;
+    color: #000;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.cube-container .azul {
+    background: black;
+    transform: translateZ(var(--translateZ));
+    width: 100%;
+}
+
+.cube-container .verde {
+    background: black;
+    transform: rotateY(180deg) translateZ(var(--translateZ));
+}
+
+.cube-container .laranja {
+    background: black;
+    color: #fff;
+    transform: rotateY(-90deg) translateZ(var(--translateZ));
+}
+
+.cube-container .vermelho {
+    background: black;
+    color: #fff;
+    transform: rotateY(90deg) translateZ(var(--translateZ));
+}
+
+.cube-container .amarelo {
+    background: black;
+    transform: rotateX(90deg) translateZ(var(--translateZ));
+}
+
+.cube-container .branco {
+    background: black;
+    transform: rotateX(-90deg) translateZ(var(--translateZ));
+}
+
+.cor-lado{
+    border-radius: 15px;
+    width: 95px;
+    height: 95px;
+    margin: auto;
+}
+
+.lado-azul{
+    background-color: blue;
+}
+
+.lado-verde{
+    background-color: rgb(3, 255, 3);
+}
+
+.lado-laranja{
+    background-color: orange;
+}
+
+.lado-vermelho{
+    background-color: red;
+}
+
+.lado-amarelo{
+    background-color: yellow;
+}
+
+.lado-branco{
+    background-color: white;
+}
+
+.partes-cubo{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+.linha{
+    display: flex;
+    margin-top: 4px;
+}
+
+.comandos{
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+}
