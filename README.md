@@ -4,6 +4,8 @@
 
  :construction: Projeto em andamento :construction: 
 
+ URL: [Cubonli](https://cubonli.netlify.app)
+
  ## Afinal, o que é o Cubonli?
 
  O Cubonli é o cubo mágico virtual feito para auxiliar na fixação dos nomes movimentos de um Cubo, para que assim, as pessoas se familiarizem melhor com os movimentos como U, U', L, D, F', entre outros.
