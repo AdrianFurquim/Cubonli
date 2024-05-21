@@ -20,6 +20,31 @@ header {
     justify-content: space-between;
 }
 
+footer{
+    background-color: rgb(20, 20, 97);
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: #fff;
+}
+
+nav{
+    background-color: rgb(20, 20, 97);
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.introducao_conteiner{
+    background-color: #fff;
+    color: #000;
+    border-radius: 20px;
+    margin: auto;
+    padding: 15px;
+    width: 40%;
+    text-align: start;
+}
+
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -127,4 +152,51 @@ header {
     display: flex;
     gap: 2em;
     justify-content: center;
+}
+
+nav h1{
+    margin-left: 1em;
+    color: #fff;
+    font-size: 2em;
+}
+
+.caminhos{
+    display: flex;
+    gap: 2em;
+    margin: auto;
+    margin-right: 2.5em;
+}
+
+.caminhos a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.caminhos li{
+    list-style-type: none;
+}
+
+.caminhos li a{
+    position: relative;
+}
+
+.caminhos li a::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    color: #fff;
+    background-color: #fff;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.caminhos li a:hover::before{
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
 }
