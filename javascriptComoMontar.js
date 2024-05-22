@@ -789,3 +789,383 @@ function Blinha() {
   // Retornando a função para ser chamada posteriormente.
   aplicaMudancaCor();
 }
+
+// Iniciando como montar cubo mágico
+
+let contadorEtapa = 1;
+let contadorMovimento;
+let titulo = document.querySelector(".titulo");
+let mensagem = document.querySelector(".mensagens");
+let comandos = document.querySelector(".comandos_montagem");
+
+function reiniciaCuboEstagio1() {
+  for (let index = 0; index < 9; index++) {
+    azul[index].style.background = cor_cinza;
+    verde[index].style.background = cor_cinza;
+    laranja[index].style.background = cor_cinza;
+    vermelho[index].style.background = cor_cinza;
+    amarelo[index].style.background = cor_cinza;
+    branco[index].style.background = cor_cinza;
+  }
+  azul[4].style.background = cor_azul;
+  verde[4].style.background = cor_verde;
+  laranja[4].style.background = cor_laranja;
+  vermelho[4].style.background = cor_vermelho;
+  amarelo[4].style.background = cor_amarelo;
+  branco[4].style.background = cor_branco;
+}
+
+function fase_inicial(){
+  if (contadorEtapa == 1) {
+    reiniciaCuboEstagio1();
+    contadorEtapa++;
+    titulo.innerHTML = "Continue clicando no cubo para continuar";
+    
+    return;
+  }
+  if (contadorEtapa == 2) {
+    azul[1].style.background = cor_azul;
+    verde[1].style.background = cor_vermelho;
+    laranja[1].style.backgroundColor = cor_verde 
+    vermelho[1].style.background = cor_laranja;
+    amarelo[1].style.background = cor_branco;
+    amarelo[3].style.background = cor_branco;
+    amarelo[5].style.background = cor_branco;
+    amarelo[7].style.background = cor_branco;
+    mensagem.innerHTML = "Coloque todas as partes brancas para cima, como mostrado no cubo <br> Não importa a ordem das outras peças, mas só da branca";
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 3) {
+    F()
+    F()
+    mensagem.innerHTML = "Vá girando o lado, para que a cor dos lados encaixe com a do meio <br> E uma por uma, girando para fazer a cruz branca de maneira correta"
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 4) {
+    U()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 5) {
+    B()
+    B()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 6) {
+    R()
+    R()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 7) {
+    U()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 8) {
+    L()
+    L()
+    mensagem.innerHTML = "agora vamos fazer as quinas do branco corretamente"
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 9) {
+    vermelho[0].style.backgroundColor = cor_branco;
+    azul[2].style.backgroundColor = cor_azul;
+    amarelo[8].style.backgroundColor = cor_vermelho;
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 10) {
+    R()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 11) {
+    U()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 12) {
+    Rlinha()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 13) {
+    amarelo[6].style.backgroundColor = cor_branco;
+    azul[0].style.backgroundColor = cor_laranja;
+    laranja[2].style.backgroundColor = cor_azul;
+    mensagem.innerHTML = "Outro emplo que estas peças podem estar, é com o branco virado para cima"
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 14) {
+    Llinha()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 15) {
+    U()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 16) {
+    L()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 17) {
+    U()
+    U()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 18) {
+    Llinha()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 19) {
+    Ulinha()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 20) {
+    L()
+    mensagem.innerHTML = "Agora é fazer os mesmos movimentos para arrumar todos os 4 lados."
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 21) {
+    laranja[6].style.backgroundColor = cor_laranja;
+    verde[8].style.backgroundColor = cor_verde;
+    verde[6].style.backgroundColor = cor_verde;
+    vermelho[8].style.backgroundColor = cor_vermelho;
+    branco[6].style.backgroundColor = cor_branco;
+    branco[8].style.backgroundColor = cor_branco;
+    mensagem.innerHTML = "Feito isso, o cubo ficará assim: "
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 22) {
+    mensagem.innerHTML = "O próximo passo é arrumas as quinas de duas cores entre os lados coloridos que não possuem a cor amarela"
+    azul[1].style.backgroundColor = cor_azul;
+    amarelo[7].style.backgroundColor = cor_vermelho;
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 23) {
+    U()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 24) {
+    R()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 25) {
+    U()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 26) {
+    Rlinha()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 27) {
+    Ulinha()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 28) {
+    Flinha()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 29) {
+    Ulinha()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 30) {
+    F()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 31) {
+    azul[3].style.backgroundColor = cor_laranja;
+    laranja[5].style.backgroundColor = cor_azul;
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 32) {
+    Llinha()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 33) {
+    Ulinha();
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 34) {
+    L()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 35) {
+    U()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 36) {
+    F()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 37) {
+    U()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 38) {
+    Flinha()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 39) {
+    U()
+    U()
+    mensagem.innerHTML = "Prontinho, agora é só realizar o movimento aprendido anteriormente, porem, inverso";
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 40) {
+    Ulinha();
+    Llinha();
+    Ulinha();
+    L();
+    U();
+    F();
+    U();
+    Flinha();
+    verde[3].style.backgroundColor = cor_verde;
+    verde[5].style.backgroundColor = cor_verde;
+    vermelho[5].style.backgroundColor = cor_vermelho;
+    laranja[3].style.backgroundColor = cor_laranja;
+
+    mensagem.innerHTML = "Ajeitando todos os lados, seu cubo ficará assim:";
+
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 41) {
+    mensagem.innerHTML = "Agora está na hora de ajeitar o topo amarelo não acha?"
+    azul[1].style.backgroundColor = cor_amarelo;
+    verde[1].style.backgroundColor = cor_amarelo;
+    vermelho[1].style.backgroundColor = cor_amarelo;
+    laranja[1].style.backgroundColor = cor_amarelo;
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 100) {
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 100) {
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 100) {
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 100) {
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 100) {
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 100) {
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 100) {
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 100) {
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 100) {
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 100) {
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 100) {
+    contadorEtapa++;
+    return;
+  }
+
+}

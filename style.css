@@ -33,6 +33,7 @@ nav{
     display: flex;
     width: 100%;
     justify-content: space-around;
+    font-family: helvetica;
 }
 
 .introducao_conteiner{
@@ -40,15 +41,24 @@ nav{
     color: #000;
     border-radius: 20px;
     margin: auto;
-    padding: 15px;
+    padding: 25px;
     width: 40%;
     text-align: start;
+    font-family: helvetica;
+    box-shadow: 10px 10px 10px black;
+}
+
+.introducao_conteiner p {
+    width: 90%;
+    font-size: 20px;
 }
 
 .container {
     max-width: 1000px;
     margin: 0 auto;
 }
+
+/* CSS do Cubo ================================================== */
 
 .cube-container {
     perspective: 1000px;
@@ -148,12 +158,41 @@ nav{
     margin-top: 4px;
 }
 
+/* Fim CSS Cubo =======================================================================*/
+
+/* Comandos de teclas do Cubo */
+
 .comandos{
-    display: flex;
-    gap: 2em;
-    justify-content: center;
+    margin-left: 1em;
 }
 
+.controle{
+    display: flex;
+    gap: 0.5em;
+    margin-top: 0.4em;
+}
+
+.movimento{
+    width:2.3em;
+    height: 2.3em;
+    background-color: rgb(0, 0, 167);
+    border-radius: 10px;
+}
+
+.tecla{
+    width: 2.3em;
+    height: 2.3em;
+    background-color: #444444;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #000;
+}
+
+.seta{
+    color: #000;
+    margin: auto;
+}
+
+/* Fim Comandos de tecla do cubo */
 nav h1{
     margin-left: 1em;
     color: #fff;
@@ -199,4 +238,32 @@ nav h1{
     visibility: visible;
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
+}
+
+.btn{
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+}
+
+.btn button{
+    border: none;
+    width: 10em;
+    color: #fff;
+    background-color: rgb(0, 0, 151);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 1em;
+    transition: 0.5s;
+}
+
+.btn button:hover{
+    width: 12em;
+    background-color: rgb(3, 3, 224);
+}
+
+.como_montar_comando{
+    text-align: center;
 }

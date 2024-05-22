@@ -18,31 +18,23 @@
         </h1>
         <ul class="caminhos">
             <li><a href="index.html">Home</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Cubo Virtual</a></li>
-            <li><a href="#">Como Montar</a></li>
+            <li><a href="Sobre.html">Sobre</a></li>
+            <li><a href="CuboVirtual.html">Cubo Virtual</a></li>
+            <li><a href="ComoMontar.html">Como Montar</a></li>
         </ul>
     </nav>
-    <br>
-    Comandos:
-    <div class="comandos">
-        <p>R - r ;</p>
-        <p>R' - t ;</p>
-        <p>L - l ;</p>
-        <p>L' - k ;</p>
-        <p>U - u ;</p>
-        <p>U' - i ;</p>
-        <p>D - d ;</p>
-        <p>D' - s ;</p>
-        <p>F - f ;</p>
-        <p>F' - g ;</p>
-        <p>B - b ;</p>
-        <p>B' - n</p>
+    <h1 class="titulo">Mova o mouse para rotacionar o Cubo a sua maneira.</h1>
+    <div class="como_montar_comando">
+        <h2 class="mensagens">Click no cubo para iniciar</h2>        
+        <div class="comandos_montagem">
+            
+        </div>
     </div>
+
 
     <header>
         <div class="cube-container">
-            <div class="cube">
+            <div class="cube" onclick="fase_inicial()">
                 <div class="cube-face azul">
                     <div class="partes-cubo">
                         <div class="linha um">
@@ -164,6 +156,6 @@
     <footer>
         <p>Copyrigt@ <span>2024</span></p>
     </footer>
-    <script src="javascript.js"></script>
+    <script src="javascriptComoMontar.js"></script>
     </body>
 </html>
