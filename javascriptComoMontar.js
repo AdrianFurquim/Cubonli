@@ -84,16 +84,6 @@ function handleKeyDown(event) {
   }
 }
 
-function minhaFuncaoA() {
-  console.log('Função para a tecla "a"');
-  // Código da função para a tecla "a"
-}
-
-function minhaFuncaoB() {
-  console.log('Função para a tecla "b"');
-  // Código da função para a tecla "b"
-}
-
 window.addEventListener('keydown', handleKeyDown);
 
 function R() {
@@ -792,11 +782,172 @@ function Blinha() {
 
 // Iniciando como montar cubo mágico
 
+let contadorMovimento4 = 0;
+let contadorMovimento5 = 0;
+let contadorMovimento6 = 0;
+
 let contadorEtapa = 1;
 let contadorMovimento;
 let titulo = document.querySelector(".titulo");
 let mensagem = document.querySelector(".mensagens");
 let comandos = document.querySelector(".comandos_montagem");
+
+function movimentoPeixe() {
+  if (contadorMovimento4 == 0) {
+    R();
+    contadorMovimento4++
+    return;
+  }
+  
+  if (contadorMovimento4 == 1) {
+    U();
+    contadorMovimento4++
+    return;
+  }
+
+  if (contadorMovimento4 == 2) {
+    Rlinha();
+    contadorMovimento4++
+    return;
+  }
+
+  if (contadorMovimento4 == 3) {
+    U()
+    contadorMovimento4++
+    return;
+  }
+
+  if (contadorMovimento4 == 4) {
+    R()
+    contadorMovimento4++
+    return;
+  }
+
+  if (contadorMovimento4 == 5) {
+    U()
+    U()
+    contadorMovimento4++
+    return;
+  }
+
+  if (contadorMovimento4 == 6) {
+    Rlinha()
+    contadorEtapa++;
+    contadorMovimento4 = 0;
+  }
+}
+
+function movimentoL() {
+  if (contadorMovimento5 == 0) {
+    Rlinha();
+    contadorMovimento5++
+    return;
+  }
+  
+  if (contadorMovimento5 == 1) {
+    F();
+    contadorMovimento5++
+    return;
+  }
+
+  if (contadorMovimento5 == 2) {
+    Rlinha();
+    contadorMovimento5++
+    return;
+  }
+
+  if (contadorMovimento5 == 3) {
+    B();
+    B();
+    contadorMovimento5++
+    return;
+  }
+
+  if (contadorMovimento5 == 4) {
+    R();
+    contadorMovimento5++
+    return;
+  }
+
+  if (contadorMovimento5 == 5) {
+    Flinha();
+    contadorMovimento5++
+    return;
+  }
+
+  if (contadorMovimento5 == 6) {
+    Rlinha()
+    contadorMovimento5++
+    return;
+  }
+
+  if (contadorMovimento5 == 7) {
+    B();
+    B();
+    contadorMovimento5++
+    return;
+  }
+
+  if (contadorMovimento5 == 8) {
+    R();
+    R();
+    contadorEtapa++;
+    contadorMovimento5 = 0;
+  }
+}
+
+function movimentoMinerva() {
+  if (contadorMovimento6 == 0) {
+    F();
+    F();
+    contadorMovimento6++;
+    return;
+  }
+  if (contadorMovimento6 == 1) {
+    U()
+    mensagem.innerHTML = "Nesta etapa, é feito um U ou U', gire o topo para o lado em que se encaixa a cor, caso não encaixe a cor do meio do topo, com o meio da face do seu cubo <br> gire para qualquer lado uma vez o topo."
+    contadorMovimento6++;
+    return;
+  }
+  if (contadorMovimento6 == 2) {
+    Rlinha()
+    contadorMovimento6++;
+    return;
+  }
+  if (contadorMovimento6 == 3) {
+    L();
+    contadorMovimento6++;
+    return;
+  }
+  if (contadorMovimento6 == 4) {
+    F();
+    F();
+    contadorMovimento6++;
+    return;
+  }
+  if (contadorMovimento6 == 5) {
+    R();    
+    contadorMovimento6++;
+    return;
+  }
+  if (contadorMovimento6 == 6) {
+    Llinha();
+    contadorMovimento6++;
+    return;
+  }
+  if (contadorMovimento6 == 7) {
+    mensagem.innerHTML = "Realize a rotação do topo, dependendo de como irá enxaicar as faces do lado esquerdo e direito."
+    U();
+    contadorMovimento6++;
+    return;
+  }
+  if (contadorMovimento6 == 8) {
+    F();
+    F();
+    contadorMovimento6 = 0;
+    contadorEtapa++;
+  }
+}
 
 function reiniciaCuboEstagio1() {
   for (let index = 0; index < 9; index++) {
@@ -1113,58 +1264,503 @@ function fase_inicial(){
     return;
   }
 
-  if (contadorEtapa == 100) {
+  if (contadorEtapa == 42) {
+    F()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 43) {
+    R()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 44) {
+    U()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 45) {
+    Rlinha()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 46) {
+    Ulinha()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 47) {
+    Flinha()
+    mensagem.innerHTML = "O cubo ficará com duas peças amarelas viradas para o topo"
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 48) {
+    U()
+    U()
+    mensagem.innerHTML = "Rotacione o topo do cubo(U2) ficando como no cubo abaixo, e repita o movimento anterior"
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 49) {
+    F()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 50) {
+    R()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 51) {
+    U()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 52) {    
+    Rlinha()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 53) {
+    Ulinha()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 54) {
+    Flinha()
+    mensagem.innerHTML = "Agora ficará com uma linha no cubo, repita mais uma vez, para que faça a cruz amarela"
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 55) {
+    F()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 56) {
+    R()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 57) {
+    U()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 58) {
+    Rlinha()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 59) {
+    Ulinha()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 60) {
+    Flinha()
+    mensagem.innerHTML = "Agora O cubo possui uma cruz amarela, estamos quase terminando."
+    contadorEtapa++;
+    return;
+  }
+
+  // Alternativa 1
+
+  if (contadorEtapa == 61) {
+    mensagem.innerHTML = "Neste momentos podemos ter diversas posições das peças amarelas <br> Porem usamos somente uma sequencia de movimentos para montar completar os amarelos no topo. <br> Caso seu cubo não esteja como no cubo abaixo, é só ir passando até ficar igual"
+    amarelo[2].style.backgroundColor = cor_amarelo;
+    amarelo[8].style.backgroundColor = cor_amarelo;
+    verde[2].style.backgroundColor = cor_amarelo;
+    azul[0].style.backgroundColor = cor_amarelo;
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 62) {
+    // R U Rlinha U R 2U Rlinha
+    movimentoPeixe();
+    return;
+  }
+
+  if (contadorEtapa == 63) {
+    U();
+    mensagem.innerHTML = "Sempre que o topo amarelo parecer este peixinho, sempre o coloque nessa formação:"
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 64) {
+    mensagem.innerHTML = "E vamos continuar!"
+    movimentoPeixe();
+    return;
+  }
+
+  if (contadorEtapa == 65) {
+    U()
+    U()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 66) {
+    movimentoPeixe();
+    return;
+  }
+
+  if (contadorEtapa == 67) {
+    mensagem.innerHTML = "Cubo totalmente amarelo!";
+    contadorEtapa++;
+    return;
+  }
+
+  // Alternativa 2
+
+  if (contadorEtapa == 68) {
+    mensagem.innerHTML = "2 modo"
+    amarelo[2].style.backgroundColor = cor_cinza;
+    amarelo[6].style.backgroundColor = cor_cinza;
+    verde[0].style.backgroundColor = cor_cinza;
+    laranja[2].style.backgroundColor = cor_cinza;
+    azul[0].style.backgroundColor = cor_amarelo;
+    vermelho[2].style.backgroundColor = cor_amarelo;
+    contadorEtapa++;
+    return;    
+  }
+
+  if (contadorEtapa == 69) {
+    movimentoPeixe();
+    return;
+  }
+
+  if (contadorEtapa == 70) {
+    movimentoPeixe();
+    return;
+  }
+
+  if (contadorEtapa == 71) {
+    U()
+    U()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 72) {
+    movimentoPeixe();
+    return;
+  }
+
+  if (contadorEtapa == 73) {
+    mensagem.innerHTML = "Topo amarelo completo!";
+    contadorEtapa++;
+    return;
+  }
+
+  // Alternativa 3
+
+  if (contadorEtapa == 74) {
+    amarelo[6].style.backgroundColor = cor_cinza;
+    amarelo[8].style.backgroundColor = cor_cinza;
+    azul[0].style.backgroundColor = cor_amarelo;
+    azul[2].style.backgroundColor = cor_amarelo;
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 75) {
+    movimentoPeixe();
+    return;
+  }
+
+  if (contadorEtapa == 76) {
+    Ulinha();
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 77) {
+    movimentoPeixe();
+    return;
+  }
+
+  if (contadorEtapa == 78) {
+    U()
+    U()
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 79) {
+    movimentoPeixe();
+    return;
+  }
+
+  if (contadorEtapa == 80) {
+    mensagem.innerHTML = "Topo concluido com sucesso!";
+    contadorEtapa++;
+    return;
+  }
+
+  // Alternativa 4
+
+  if (contadorEtapa == 81) {
+    mensagem.innerHTML = "Modo 5";
+    amarelo[0].style.backgroundColor = cor_cinza;
+    amarelo[2].style.backgroundColor = cor_cinza;
+    amarelo[6].style.backgroundColor = cor_cinza;
+    amarelo[8].style.backgroundColor = cor_cinza;
+    vermelho[0].style.backgroundColor = cor_amarelo;
+    vermelho[2].style.backgroundColor = cor_amarelo;
+    laranja[0].style.backgroundColor = cor_amarelo;
+    laranja[2].style.backgroundColor = cor_amarelo;
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 82) {
+    movimentoPeixe();
+    return;
+  }
+
+  if (contadorEtapa == 83) {
+    movimentoPeixe();
+    return;
+  }
+
+  if (contadorEtapa == 84) {
+    mensagem.innerHTML = "Topo concluido com sucesso!"
+    contadorEtapa++;
+    return;
+  }
+
+  // alternativa 5
+
+  if (contadorEtapa == 85) {
+    amarelo[0].style.backgroundColor = cor_cinza;
+    amarelo[2].style.backgroundColor = cor_cinza;
+    amarelo[6].style.backgroundColor = cor_cinza;
+    amarelo[8].style.backgroundColor = cor_cinza;
+    laranja[0].style.backgroundColor = cor_amarelo;
+    laranja[2].style.backgroundColor = cor_amarelo;
+    azul[2].style.backgroundColor = cor_amarelo;
+    verde[0].style.backgroundColor = cor_amarelo;
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 86) {
+    movimentoPeixe();
+    return;
+  }
+
+  if (contadorEtapa == 87) {
+    Ulinha();
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 88) {
+    movimentoPeixe();
+    return;
+  }
+
+  if (contadorEtapa == 89) {
+    mensagem.innerHTML = "Montado amarelos!"
+    contadorEtapa++;
+    return;
+  }
+
+  // Alternativa 6
+
+  if (contadorEtapa == 90) {
+    mensagem.innerHTML = "Outra vez"
+    amarelo[0].style.backgroundColor = cor_cinza;
+    amarelo[2].style.backgroundColor = cor_cinza;
+    amarelo[8].style.backgroundColor = cor_cinza;
+    vermelho[0].style.backgroundColor = cor_amarelo;
+    verde[0].style.backgroundColor = cor_amarelo;
+    laranja[0].style.backgroundColor = cor_amarelo;
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 91) {
+    movimentoPeixe();
+    return;
+  }
+
+  if (contadorEtapa == 92) {
+    U();
+    U();
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 93) {
+    movimentoPeixe();
+    return;
+  }
+
+  if (contadorEtapa == 94) {
+    mensagem.innerHTML = "Topo montado novamente!"
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 95) {
+    mensagem.innerHTML = "Ultima alternativa!"
+    R()
+    U()
+    U()
+    Rlinha()
+    Ulinha()
+    R()
+    Ulinha()
+    Rlinha();
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 96) {
+    movimentoPeixe();
+    return;
+  }
+
+  if (contadorEtapa == 97) {
+    mensagem.innerHTML = "Etapas concluidas com sucesso!"
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 98) {
+    azul[0].style.backgroundColor = "darkviolet";
+    azul[2].style.backgroundColor = "darkviolet";
+    mensagem.innerHTML = "Agora temos duas alternativas, ou temos 2 cantos de uma face da mesma cor como o exemplo:, ou não temos. <br> cor meramente ilustrativa, pode ser qualquer cor"
+    contadorEtapa++;
+    return;
+  }
+
+
+  if (contadorEtapa == 99) {
+    mensagem.innerHTML = "Caso não tenha, faça o movimento:"
+    azul[0].style.backgroundColor = cor_cinza;
+    azul[2].style.backgroundColor = cor_cinza;
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 100) {
+    movimentoL();
+    return;
+  }
+
+  if (contadorEtapa == 101) {
+    mensagem.innerHTML = "Ao finalizar esta sequência, iremos ter o lado esquerdo, com dois cantos de mesma cor.";
+    laranja[0].style.backgroundColor = "darkviolet";
+    laranja[2].style.backgroundColor = "darkviolet";
     contadorEtapa++;
     return;
   }
 
-  if (contadorEtapa == 100) {
+  if (contadorEtapa == 102) {
+    mensagem.innerHTML = "Rotacione o topo do cubo para este lado que possui duas cores iguais olharem para tras como no exemplo: <br> cor meramente ilustrativa, pode ser qualquer cor";
+    U()
     contadorEtapa++;
     return;
   }
 
-  if (contadorEtapa == 100) {
+  if (contadorEtapa == 103) {
+    movimentoL();
+    return;
+  }
+
+  if (contadorEtapa == 104) {
+    mensagem.innerHTML = "Magicamente você terá os cantos de todas as fazer combinando automaticamente, basta rotacionar para encaixar as cores dos cantos, com seus respectivos lados."
+    laranja[0].style.backgroundColor = cor_verde;
+    laranja[2].style.backgroundColor = cor_verde;
+    azul[0].style.backgroundColor = cor_laranja;
+    azul[2].style.backgroundColor = cor_laranja;
+    verde[0].style.backgroundColor = cor_vermelho;
+    verde[2].style.backgroundColor = cor_vermelho;
+    vermelho[0].style.backgroundColor = cor_azul;
+    vermelho[2].style.backgroundColor = cor_azul;
     contadorEtapa++;
     return;
   }
 
-  if (contadorEtapa == 100) {
+  if (contadorEtapa == 105) {
+    U();
     contadorEtapa++;
     return;
   }
 
-  if (contadorEtapa == 100) {
+  if (contadorEtapa == 106) {
+    mensagem.innerHTML = "Pode existir um lado em seu cubo, onde pode ou não existir, uma face já completa com a cor correta como no exemplo: ";
+    vermelho[1].style.backgroundColor = cor_vermelho;
     contadorEtapa++;
     return;
   }
 
-  if (contadorEtapa == 100) {
+
+  if (contadorEtapa == 107) {
+    mensagem.innerHTML = "Mas caso não exista tal face, realize o movimento a seguir que alguma face irá ficar arrumada automaticamente.";
+    vermelho[1].style.backgroundColor = cor_cinza;
     contadorEtapa++;
     return;
   }
 
-  if (contadorEtapa == 100) {
+  if (contadorEtapa == 108) {
+    movimentoMinerva();
+    return;
+  }
+
+  if (contadorEtapa == 109) {
+    mensagem.innerHTML = "Feito o movimento, algum dos cantos irá ficar correto.";
+    verde[1].style.backgroundColor = cor_verde;
     contadorEtapa++;
     return;
   }
 
-  if (contadorEtapa == 100) {
+  if (contadorEtapa == 110) {
+    mensagem.innerHTML = "Agora, coloque este lado para tras como no exemplo, e realize o movimento novamente.";
     contadorEtapa++;
     return;
   }
 
-  if (contadorEtapa == 100) {
+  if (contadorEtapa == 111) {
+    movimentoMinerva();
+    return;
+  }
+
+  if (contadorEtapa == 112) {
+    azul[1].style.backgroundColor = cor_azul;
+    laranja[1].style.backgroundColor = cor_laranja;
+    vermelho[1].style.backgroundColor = cor_vermelho;
     contadorEtapa++;
     return;
   }
 
-  if (contadorEtapa == 100) {
-    contadorEtapa++;
+  if (contadorEtapa == 113) {
+    mensagem.innerHTML = "Se tudo estiver ocorrido corretamente, seu cubo estara montado nesse exato momenento, Parabéns!!"
+    contadorEtapa = 0;
     return;
   }
 
