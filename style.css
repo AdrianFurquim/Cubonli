@@ -248,7 +248,7 @@ nav h1{
 
 .btn_pular{
     border: none;
-    width: 7em;
+    width: 10em;
     color: #fff;
     background-color: rgb(0, 0, 151);
     padding: 15px;
@@ -260,7 +260,8 @@ nav h1{
     display: flex;
     margin-top: 1em;
     margin-left: 2em;
-    position: relative;
+    margin-right: 2em;
+    text-align: center;
 }
 
 .btn button{
@@ -283,4 +284,9 @@ nav h1{
 
 .como_montar_comando{
     text-align: center;
+}
+
+.etapas{
+    display: flex;
+    justify-content: space-between;
 }

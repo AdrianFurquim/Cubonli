@@ -5,6 +5,7 @@ let vermelho = document.querySelectorAll(".lado-vermelho");
 let amarelo = document.querySelectorAll(".lado-amarelo");
 let branco = document.querySelectorAll(".lado-branco");
 
+// Variaveis com as cores para facilitar a digitação e modicação.
 let cor_cinza = "gray";
 let cor_azul = "blue";
 let cor_verde = "rgb(3, 255, 3)";
@@ -13,11 +14,16 @@ let cor_vermelho = "red";
 let cor_amarelo = "yellow";
 let cor_branco = "white";
 
+// Pegando o cubo.
 const cube = document.querySelector(".cube");
+// Setando o valor do X do mouse.
 let mouseX = 0;
+// Setando o valor do Y do mouse.
 let mouseY = 0;
+// Velocidade de rotação conforme se move o mouse.
 const rotationValue = 410;
 
+// Função para mover o mouse e o cubo junto.
 const handleMouseMove = (event) => {
   mouseX = event.clientX;
   mouseY = event.clientY;
@@ -25,9 +31,9 @@ const handleMouseMove = (event) => {
   rotateY = (mouseX / window.innerWidth - 0.5) * rotationValue;
   cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 };
-
 window.addEventListener("mousemove", handleMouseMove);
 
+// Movimento R do cubo.
 function R() {
   // Capturando os valores de background-color no momento da execução
   const ladoAzul1Color = window.getComputedStyle(azul[2]).backgroundColor;
@@ -86,6 +92,7 @@ function R() {
   aplicaMudancaCor();
 }
 
+// Movimento R' do cubo.
 function Rlinha() {
   // Capturando os valores de background-color no momento da execução
   const ladoAzul1Color = window.getComputedStyle(azul[2]).backgroundColor;
@@ -144,6 +151,7 @@ function Rlinha() {
   aplicaMudancaCor();
 }
 
+// Movimento L do cubo.
 function L() {
   // Capturando os valores de background-color no momento da execução
   const ladoAzul1Color = window.getComputedStyle(azul[0]).backgroundColor;
@@ -202,6 +210,7 @@ function L() {
   aplicaMudancaCor();
 }
 
+// Movimento L' do cubo.
 function Llinha() {
   // Capturando os valores de background-color no momento da execução
   const ladoAzul1Color = window.getComputedStyle(azul[0]).backgroundColor;
@@ -260,6 +269,7 @@ function Llinha() {
   aplicaMudancaCor();
 }
 
+// Movimento U do cubo.
 function U(){
   // Capturando os valores de background-color no momento da execução
   const ladoAzul1Color = window.getComputedStyle(azul[0]).backgroundColor;
@@ -318,6 +328,7 @@ function U(){
   aplicaMudancaCor();
 }
 
+// Movimento U' do cubo.
 function Ulinha() {
   // Capturando os valores de background-color no momento da execução
   const ladoAzul1Color = window.getComputedStyle(azul[0]).backgroundColor;
@@ -375,6 +386,7 @@ function Ulinha() {
   aplicaMudancaCor();
 }
 
+// Movimento D do cubo.
 function D() {
   // Capturando os valores de background-color no momento da execução
   const ladoAzul1Color = window.getComputedStyle(azul[6]).backgroundColor;
@@ -432,6 +444,7 @@ function D() {
   aplicaMudancaCor();
 }
 
+// Movimento D' do cubo.
 function Dlinha() {
   // Capturando os valores de background-color no momento da execução
   const ladoAzul1Color = window.getComputedStyle(azul[6]).backgroundColor;
@@ -490,6 +503,7 @@ function Dlinha() {
   aplicaMudancaCor();
 }
 
+// Movimento F do cubo.
 function F() {
   // Capturando os valores de background-color no momento da execução
   const ladoLaranja1Color = window.getComputedStyle(laranja[2]).backgroundColor;
@@ -548,6 +562,7 @@ function F() {
   aplicaMudancaCor();
 }
 
+// Movimento F' do cubo.
 function Flinha() {
   // Capturando os valores de background-color no momento da execução
   const ladoLaranja1Color = window.getComputedStyle(laranja[2]).backgroundColor;
@@ -606,6 +621,7 @@ function Flinha() {
   aplicaMudancaCor();
 }
 
+// Movimento B do cubo.
 function B() {
   // Capturando os valores de background-color no momento da execução
   const ladoLaranja1Color = window.getComputedStyle(laranja[0]).backgroundColor;
@@ -664,6 +680,7 @@ function B() {
   aplicaMudancaCor();
 }
 
+// Movimento B' do cubo.
 function Blinha() {
   // Capturando os valores de background-color no momento da execução
   const ladoLaranja1Color = window.getComputedStyle(laranja[0]).backgroundColor;
@@ -722,22 +739,27 @@ function Blinha() {
   aplicaMudancaCor();
 }
 
-// Iniciando como montar cubo mágico
+// Iniciando como montar cubo mágico =================================================================================================
 
+// Contadores para os movimentos de montagem do Cubo.
 let contadorMovimento1 = 0;
 let contadorMovimento2 = 0;
 let contadorMovimento4 = 0;
 let contadorMovimento5 = 0;
 let contadorMovimento6 = 0;
 
+// Valor para avançar a etapa.
 let valorP = 0;
-
+// Valor para voltar a etapa.
+let valorV = 0;
+// Contador para ir rodando passo a passo.
 let contadorEtapa = 1;
 let contadorMovimento;
 let titulo = document.querySelector(".titulo");
 let mensagem = document.querySelector(".mensagens");
 let comandos = document.querySelector(".comandos_montagem");
 
+// Movimento Right para ajeitar os lados das faces azul, verde, vermelho e laranja.
 function movimentoPrimarioR() {
   if (contadorMovimento1 == 0) {
     U();
@@ -787,7 +809,7 @@ function movimentoPrimarioR() {
     contadorEtapa++;
   }
 }
-
+// Movimento Left para ajeitar os lados das faces azul, verde, vermelho e laranja.
 function movimentoPrimarioL() {
   if (contadorMovimento1 == 0) {
     Ulinha();
@@ -837,7 +859,7 @@ function movimentoPrimarioL() {
     contadorEtapa++;
   }
 }
-
+// Movimento para montar a cruz amarela no cubo.
 function movimentoCruzA() {
   if (contadorMovimento2 == 0) {
     F();
@@ -875,7 +897,7 @@ function movimentoCruzA() {
     contadorEtapa++;
   }
 }
-
+// Movimento para completar o topo do cubo inteiro de amarelo
 function movimentoPeixe() {
   if (contadorMovimento4 == 0) {
     R();
@@ -920,7 +942,7 @@ function movimentoPeixe() {
     contadorMovimento4 = 0;
   }
 }
-
+// Movimento para encaixar os cantos superiores dos lados azul, verde, vermelho e laranja corretamente.
 function movimentoL() {
   if (contadorMovimento5 == 0) {
     Rlinha();
@@ -979,7 +1001,7 @@ function movimentoL() {
     contadorMovimento5 = 0;
   }
 }
-
+// Movimento final para ajeitar a ultima peça para terminar.
 function movimentoMinerva() {
   if (contadorMovimento6 == 0) {
     F();
@@ -1032,12 +1054,17 @@ function movimentoMinerva() {
     contadorEtapa++;
   }
 }
-
+// Função para pular a etapa.
 function pularEtapa() {
   contadorEtapa = contadorEtapa + valorP;
-  fase_inicial();
+  montandoCubo();
+}
+function voltarEtapa() {
+  contadorEtapa = contadorEtapa - valorV;
+  montandoCubo();
 }
 
+// Colocando todas as cores do cubo para cinza com loop, menos os centros da face.
 function reiniciaCuboEstagio1() {
   for (let index = 0; index < 9; index++) {
     azul[index].style.background = cor_cinza;
@@ -1055,35 +1082,37 @@ function reiniciaCuboEstagio1() {
   branco[4].style.background = cor_branco;
 }
 
-function fase_inicial(){
+function montandoCubo(){
   if (contadorEtapa == 1) {
+    titulo.innerHTML = "Continue clicando no cubo para continuar";
     reiniciaCuboEstagio1();
     contadorEtapa++;
-    titulo.innerHTML = "Continue clicando no cubo para continuar";
-    
     return;
   }
   if (contadorEtapa == 2) {
+    titulo.innerHTML = "Fazendo cruz branca."
+    mensagem.innerHTML = "Coloque todas as partes brancas para cima, como mostrado no cubo <br> Não importa a ordem das outras peças, mas só da branca";
+    reiniciaCuboEstagio1();
     azul[1].style.background = cor_azul;
-    verde[1].style.background = cor_vermelho;
-    laranja[1].style.backgroundColor = cor_verde 
     vermelho[1].style.background = cor_laranja;
+    verde[1].style.background = cor_vermelho;
+    laranja[1].style.backgroundColor = cor_verde;
     amarelo[1].style.background = cor_branco;
     amarelo[3].style.background = cor_branco;
     amarelo[5].style.background = cor_branco;
     amarelo[7].style.background = cor_branco;
-    mensagem.innerHTML = "Coloque todas as partes brancas para cima, como mostrado no cubo <br> Não importa a ordem das outras peças, mas só da branca";
-    titulo.innerHTML = "Fazendo cruz branca."
     valorP = 6;
+    valorV = 0;
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 3) {
+    mensagem.innerHTML = "Vá girando o lado, para que a cor dos lados encaixe com a do meio <br> Uma por uma, girando para fazer a cruz branca de maneira correta"
     valorP = 0;
+    valorV = 0;
     F()
     F()
-    mensagem.innerHTML = "Vá girando o lado, para que a cor dos lados encaixe com a do meio <br> E uma por uma, girando para fazer a cruz branca de maneira correta"
     contadorEtapa++;
     return;
   }
@@ -1117,39 +1146,36 @@ function fase_inicial(){
   if (contadorEtapa == 8) {
     L()
     L()
-    mensagem.innerHTML = "Agora temos a cruz branca no cubo."
+    mensagem.innerHTML = "Agora temos a cruz branca no cubo!"
     contadorEtapa++;
     return;
   }
-
+  
   if (contadorEtapa == 9) {
-    mensagem.innerHTML = "agora vamos fazer as quinas do branco corretamente;"
-    amarelo[1].style.backgroundColor = cor_cinza;
-    amarelo[3].style.backgroundColor = cor_cinza;
-    amarelo[5].style.backgroundColor = cor_cinza;
-    amarelo[7].style.backgroundColor = cor_cinza;
+    titulo.innerHTML = "Ajeitando quinas do branco"
+    mensagem.innerHTML = "Agora vamos ver o movimento para colocar as quinas do branco corretamente";
+    reiniciaCuboEstagio1();
+    azul[2].style.backgroundColor = cor_azul;
+    azul[7].style.backgroundColor = cor_azul;
+    vermelho[0].style.backgroundColor = cor_branco;
+    vermelho[7].style.backgroundColor = cor_vermelho;
+    verde[7].style.backgroundColor = cor_verde;
+    laranja[7].style.backgroundColor = cor_laranja;
     branco[1].style.backgroundColor = cor_branco;
+    branco[2].style.backgroundColor = cor_cinza;
     branco[3].style.backgroundColor = cor_branco;
     branco[5].style.backgroundColor = cor_branco;
     branco[7].style.backgroundColor = cor_branco;
-    azul[1].style.backgroundColor = cor_cinza;
-    laranja[1].style.backgroundColor = cor_cinza;
-    verde[1].style.backgroundColor = cor_cinza;
-    vermelho[1].style.backgroundColor = cor_cinza;
-    azul[7].style.backgroundColor = cor_azul;
-    laranja[7].style.backgroundColor = cor_laranja;
-    verde[7].style.backgroundColor = cor_verde;
-    vermelho[7].style.backgroundColor = cor_vermelho;
-    vermelho[0].style.backgroundColor = cor_branco;
-    azul[2].style.backgroundColor = cor_azul;
     amarelo[8].style.backgroundColor = cor_vermelho;
     contadorEtapa++;
     valorP = 3;
+    valorV = 8;
     return;
   }
 
   if (contadorEtapa == 10) {
     valorP = 0;
+    valorV = 0;
     R()
     contadorEtapa++;
     return;
@@ -1168,23 +1194,25 @@ function fase_inicial(){
   }
 
   if (contadorEtapa == 13) {
-    vermelho[0].style.backgroundColor = cor_cinza;
+    mensagem.innerHTML = "Outro emplo que estas peças podem estar, é com o branco virado para cima"
+    azul[0].style.backgroundColor = cor_laranja;
     azul[2].style.backgroundColor = cor_cinza;
-    amarelo[8].style.backgroundColor = cor_cinza;
-    vermelho[6].style.backgroundColor = cor_vermelho;
     azul[8].style.backgroundColor = cor_azul;
+    vermelho[0].style.backgroundColor = cor_cinza;
+    vermelho[6].style.backgroundColor = cor_vermelho;
+    laranja[2].style.backgroundColor = cor_azul;
     branco[2].style.backgroundColor = cor_branco;
     amarelo[6].style.backgroundColor = cor_branco;
-    azul[0].style.backgroundColor = cor_laranja;
-    laranja[2].style.backgroundColor = cor_azul;
-    mensagem.innerHTML = "Outro emplo que estas peças podem estar, é com o branco virado para cima"
-    valorP = 7;
+    amarelo[8].style.backgroundColor = cor_cinza;
+    valorP = 8;
+    valorV = 5;
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 14) {
     valorP = 0;
+    valorV = 0;
     Llinha()
     contadorEtapa++;
     return;
@@ -1222,17 +1250,37 @@ function fase_inicial(){
   }
 
   if (contadorEtapa == 20) {
+    mensagem.innerHTML = "Agora é fazer os mesmos movimentos para arrumar todos os 4 lados";
     L()
-    mensagem.innerHTML = "Agora é fazer os mesmos movimentos para arrumar todos os 4 lados."
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 21) {
+    mensagem.innerHTML = "Feito isso, o cubo ficará assim:";
     azul[0].style.backgroundColor = cor_cinza;
-    laranja[2].style.backgroundColor = cor_cinza;
-    amarelo[6].style.backgroundColor = cor_cinza;
     azul[6].style.backgroundColor = cor_azul;
+    vermelho[8].style.backgroundColor = cor_vermelho;
+    verde[6].style.backgroundColor = cor_verde;
+    verde[8].style.backgroundColor = cor_verde;
+    laranja[2].style.backgroundColor = cor_cinza;
+    laranja[6].style.backgroundColor = cor_laranja;
+    laranja[8].style.backgroundColor = cor_laranja;
+    branco[0].style.backgroundColor = cor_branco;
+    branco[6].style.backgroundColor = cor_branco;
+    branco[8].style.backgroundColor = cor_branco;
+    amarelo[6].style.backgroundColor = cor_cinza;
+    contadorEtapa++;
+    return;
+  }
+
+  if (contadorEtapa == 22) {
+    titulo.innerHTML = "Montando a segunda linha das cores Azul, vermelho, verde e laranja";
+    mensagem.innerHTML = "O próximo passo é arrumas as quinas de duas cores entre os lados coloridos que não possuem a cor amarela <br> Para a direita";
+    azul[0].style.backgroundColor = cor_cinza;
+    azul[1].style.backgroundColor = cor_azul;
+    azul[6].style.backgroundColor = cor_azul;
+    laranja[2].style.backgroundColor = cor_cinza;
     laranja[8].style.backgroundColor = cor_laranja;
     laranja[6].style.backgroundColor = cor_laranja;
     verde[8].style.backgroundColor = cor_verde;
@@ -1241,32 +1289,34 @@ function fase_inicial(){
     branco[6].style.backgroundColor = cor_branco;
     branco[8].style.backgroundColor = cor_branco;
     branco[0].style.backgroundColor = cor_branco;
-    mensagem.innerHTML = "Feito isso, o cubo ficará assim: "
-    contadorEtapa++;
-    return;
-  }
-
-  if (contadorEtapa == 22) {
-    mensagem.innerHTML = "O próximo passo é arrumas as quinas de duas cores entre os lados coloridos que não possuem a cor amarela"
-    azul[1].style.backgroundColor = cor_azul;
+    amarelo[6].style.backgroundColor = cor_cinza;
     amarelo[7].style.backgroundColor = cor_vermelho;
+    valorP = 1;
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 23) {
+    valorP = 0;
+    valorV = 0;
     movimentoPrimarioR();
     return;
   }
 
   if (contadorEtapa == 24) {
+    mensagem.innerHTML = "O próximo passo é arrumas as quinas de duas cores entre os lados coloridos que não possuem a cor amarela <br> Para a esquerda";
     azul[1].style.backgroundColor = cor_azul;
+    azul[5].style.backgroundColor = cor_azul;
+    vermelho[3].style.backgroundColor = cor_vermelho;
     amarelo[7].style.backgroundColor = cor_laranja;
+    valorP = 2;
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 25) {
+    valorP = 0;
+    valorV = 0;
     movimentoPrimarioL();
     return;
   }
@@ -1279,8 +1329,11 @@ function fase_inicial(){
 
   if (contadorEtapa == 27) {
     mensagem.innerHTML = "Mas e se o cubo estiver assim?";
-    laranja[5].style.backgroundColor = cor_azul;
+    azul[1].style.backgroundColor = cor_cinza;
     azul[3].style.backgroundColor = cor_laranja;
+    laranja[5].style.backgroundColor = cor_azul;
+    amarelo[7].style.backgroundColor = cor_cinza;
+    valorP = 6;
     contadorEtapa++;
     return;
   }
@@ -1289,6 +1342,8 @@ function fase_inicial(){
     mensagem.innerHTML = "Realize o movimento aprendido da mesma maneira, como se alguma outra fosse substituir ela! <br> Cor roxa meramente ilustrativa.";
     azul[1].style.backgroundColor = "darkviolet";
     amarelo[7].style.backgroundColor = "darkviolet";
+    valorP = 0;
+    valorV = 0;
     contadorEtapa++;
     return;
   }
@@ -1326,39 +1381,50 @@ function fase_inicial(){
 
   if (contadorEtapa == 34) {
     mensagem.innerHTML = "Ajeitando todos os lados, seu cubo ficará assim:";
+    azul[3].style.backgroundColor = cor_azul;
+    vermelho[5].style.backgroundColor = cor_vermelho;
     verde[3].style.backgroundColor = cor_verde;
     verde[5].style.backgroundColor = cor_verde;
-    vermelho[5].style.backgroundColor = cor_vermelho;
+    laranja[5].style.backgroundColor = cor_laranja;
     laranja[3].style.backgroundColor = cor_laranja;
+    valorP = 0;
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 35) {
-    mensagem.innerHTML = "Agora está na hora de ajeitar o topo amarelo não acha?"
+    titulo.innerHTML = "Montando cruz amarela";
+    mensagem.innerHTML = "Agora está na hora de ajeitar o topo amarelo não acha? <br> Caso seu cubo não esteja dessa maneira em relação as peças amarelas, pule a etapa";
     azul[1].style.backgroundColor = cor_amarelo;
-    verde[1].style.backgroundColor = cor_amarelo;
     vermelho[1].style.backgroundColor = cor_amarelo;
+    vermelho[5].style.backgroundColor = cor_vermelho;
+    verde[1].style.backgroundColor = cor_amarelo;
+    verde[3].style.backgroundColor = cor_verde;
+    verde[5].style.backgroundColor = cor_verde;
+    laranja[3].style.backgroundColor = cor_laranja;
     laranja[1].style.backgroundColor = cor_amarelo;
+    valorP = 7;
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 36) {
+    valorP = 0;
+    valorV = 0;
     movimentoCruzA();
     return;
   }
 
   if (contadorEtapa == 37) {
-    mensagem.innerHTML = "O cubo ficará com duas peças amarelas viradas para o topo";
+    mensagem.innerHTML = "O cubo ficará com duas peças amarelas viradas para o topo <br> Caso seu cubo não esteja dessa maneira em relação as peças amarelas, pule a etapa";
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 38) {
+    mensagem.innerHTML = "Rotacione o topo do cubo(U2) ficando como no cubo abaixo, e repita o movimento anterior <br> Caso seu cubo não esteja dessa maneira em relação as peças amarelas, pule a etapa";
     U()
     U()
-    mensagem.innerHTML = "Rotacione o topo do cubo(U2) ficando como no cubo abaixo, e repita o movimento anterior";
     contadorEtapa++;
     return;
   }
@@ -1369,7 +1435,7 @@ function fase_inicial(){
   }
 
   if (contadorEtapa == 40) {
-    mensagem.innerHTML = "Agora ficará com uma linha no cubo, repita mais uma vez, para que faça a cruz amarela"
+    mensagem.innerHTML = "Agora ficará com uma linha no cubo, repita mais uma vez, para que faça a cruz amarela <br> Caso seu cubo não esteja dessa maneira em relação as peças amarelas, pule a etapa"
     contadorEtapa++;
     return;
   }
@@ -1380,39 +1446,48 @@ function fase_inicial(){
   }
 
   if (contadorEtapa == 42) {
-    mensagem.innerHTML = "Agora O cubo possui uma cruz amarela, estamos quase terminando."
+    mensagem.innerHTML = "Agora O cubo possui uma cruz amarela, estamos quase terminando. <br> Caso não esteja, verifique as etapar novamente, ou ferifique se as peças do cubo estão corretas";
     contadorEtapa++;
     return;
   }
 
-  // Alternativa 1
-
+  // Posição 1.
   if (contadorEtapa == 43) {
-    mensagem.innerHTML = "Neste momentos podemos ter diversas posições das peças amarelas <br> Porem usamos somente uma sequencia de movimentos para montar completar os amarelos no topo. <br> Caso seu cubo não esteja como no cubo abaixo, é só ir passando até ficar igual"
-    valorP = 6;
+    titulo.innerHTML = "Colorindo todo o topo de amarelo";
+    mensagem.innerHTML = "Neste momentos podemos ter diversas posições das peças amarelas <br> Porem usamos somente uma sequencia de movimentos para montar completar os amarelos no topo. <br> Caso seu cubo não esteja como no cubo abaixo, é só ir pulando a etapa até ficar igual";
+    azul[0].style.backgroundColor = cor_amarelo;
+    azul[1].style.backgroundColor = cor_cinza;
+    vermelho[1].style.backgroundColor = cor_cinza;
+    verde[1].style.backgroundColor = cor_cinza;
+    verde[2].style.backgroundColor = cor_amarelo;
+    laranja[1].style.backgroundColor = cor_cinza;
+    amarelo[1].style.backgroundColor = cor_amarelo;
+    amarelo[3].style.backgroundColor = cor_amarelo;
+    amarelo[5].style.backgroundColor = cor_amarelo;
+    amarelo[7].style.backgroundColor = cor_amarelo;
     amarelo[2].style.backgroundColor = cor_amarelo;
     amarelo[8].style.backgroundColor = cor_amarelo;
-    verde[2].style.backgroundColor = cor_amarelo;
-    azul[0].style.backgroundColor = cor_amarelo;
+    valorP = 6;
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 44) {
-    // R U Rlinha U R 2U Rlinha
+    titulo.innerHTML = "Posição 1:";
+    valorP = 0;
+    valorV = 0;
     movimentoPeixe();
     return;
   }
 
   if (contadorEtapa == 45) {
-    U();
     mensagem.innerHTML = "Sempre que o topo amarelo parecer este peixinho, sempre o coloque nessa formação:"
+    U();
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 46) {
-    mensagem.innerHTML = "E vamos continuar!"
     movimentoPeixe();
     return;
   }
@@ -1425,36 +1500,38 @@ function fase_inicial(){
   }
 
   if (contadorEtapa == 48) {
+    mensagem.innerHTML = "Sempre que o topo amarelo parecer este peixinho, sempre o coloque nessa formação:";
     movimentoPeixe();
     return;
   }
 
   if (contadorEtapa == 49) {
-    mensagem.innerHTML = "Cubo totalmente amarelo!";
+    mensagem.innerHTML = "Topo amarelo completo clique no cubo novamente, e pule a etapa as outras etapas";
     contadorEtapa++;
     return;
   }
 
-  // Alternativa 2
-
+  // Posição 2.
   if (contadorEtapa == 50) {
-    mensagem.innerHTML = "2 modo"
-    amarelo[0].style.backgroundColor = cor_amarelo;
-    amarelo[2].style.backgroundColor = cor_cinza;
-    amarelo[6].style.backgroundColor = cor_cinza;
-    amarelo[8].style.backgroundColor = cor_amarelo;
+    titulo.innerHTML = "Posição 2:";
+    azul[0].style.backgroundColor = cor_amarelo;
+    vermelho[2].style.backgroundColor = cor_amarelo;
     verde[0].style.backgroundColor = cor_cinza;
     verde[2].style.backgroundColor = cor_cinza;
     laranja[0].style.backgroundColor = cor_cinza;
     laranja[2].style.backgroundColor = cor_cinza;
-    azul[0].style.backgroundColor = cor_amarelo;
-    vermelho[2].style.backgroundColor = cor_amarelo;
+    amarelo[0].style.backgroundColor = cor_amarelo;
+    amarelo[2].style.backgroundColor = cor_cinza;
+    amarelo[6].style.backgroundColor = cor_cinza;
+    amarelo[8].style.backgroundColor = cor_amarelo;
     valorP = 5;
     contadorEtapa++;
     return;    
   }
 
   if (contadorEtapa == 51) {
+    valorP = 0;
+    valorV = 0;
     movimentoPeixe();
     return;
   }
@@ -1465,6 +1542,7 @@ function fase_inicial(){
   }
 
   if (contadorEtapa == 53) {
+    mensagem.innerHTML = "Sempre que o topo amarelo parecer este peixinho, sempre o coloque nessa formação:"
     U()
     U()
     contadorEtapa++;
@@ -1477,32 +1555,35 @@ function fase_inicial(){
   }
 
   if (contadorEtapa == 55) {
-    mensagem.innerHTML = "Topo amarelo completo!";
+    mensagem.innerHTML = "Topo amarelo completo clique no cubo novamente, e pule a etapa as outras etapas"
     contadorEtapa++;
     return;
   }
 
-  // Alternativa 3
-
+  // Posição 3.
   if (contadorEtapa == 56) {
+    titulo.innerHTML = "Posição 3:";
+    azul[0].style.backgroundColor = cor_amarelo;
+    azul[2].style.backgroundColor = cor_amarelo;
+    vermelho[2].style.backgroundColor = cor_cinza;
     amarelo[0].style.backgroundColor = cor_amarelo;
     amarelo[2].style.backgroundColor = cor_amarelo;
     amarelo[6].style.backgroundColor = cor_cinza;
     amarelo[8].style.backgroundColor = cor_cinza;
-    azul[0].style.backgroundColor = cor_amarelo;
-    azul[2].style.backgroundColor = cor_amarelo;
-    vermelho[2].style.backgroundColor = cor_cinza;
     contadorEtapa++;
     valorP = 6;
     return;
   }
 
   if (contadorEtapa == 57) {
+    valorP = 0;
+    valorV = 0;
     movimentoPeixe();
     return;
   }
 
   if (contadorEtapa == 58) {
+    mensagem.innerHTML = "Sempre que o topo amarelo parecer este peixinho, sempre o coloque nessa formação:"
     Ulinha();
     contadorEtapa++;
     return;
@@ -1514,6 +1595,7 @@ function fase_inicial(){
   }
 
   if (contadorEtapa == 60) {
+    mensagem.innerHTML = "Sempre que o topo amarelo parecer este peixinho, sempre o coloque nessa formação:"
     U()
     U()
     contadorEtapa++;
@@ -1526,31 +1608,32 @@ function fase_inicial(){
   }
 
   if (contadorEtapa == 62) {
-    mensagem.innerHTML = "Topo concluido com sucesso!";
+    mensagem.innerHTML = "Topo amarelo completo clique no cubo novamente, e pule a etapa as outras etapas"
     contadorEtapa++;
     return;
   }
 
-  // Alternativa 4
-
+  // Posição 4.
   if (contadorEtapa == 63) {
-    mensagem.innerHTML = "Modo 5";
-    amarelo[0].style.backgroundColor = cor_cinza;
-    amarelo[2].style.backgroundColor = cor_cinza;
-    amarelo[6].style.backgroundColor = cor_cinza;
-    amarelo[8].style.backgroundColor = cor_cinza;
+    titulo.innerHTML = "Posição 4:";
+    azul[0].style.backgroundColor = cor_cinza;
+    azul[2].style.backgroundColor = cor_cinza;
     vermelho[0].style.backgroundColor = cor_amarelo;
     vermelho[2].style.backgroundColor = cor_amarelo;
     laranja[0].style.backgroundColor = cor_amarelo;
     laranja[2].style.backgroundColor = cor_amarelo;
-    azul[0].style.backgroundColor = cor_cinza;
-    azul[2].style.backgroundColor = cor_cinza;
+    amarelo[0].style.backgroundColor = cor_cinza;
+    amarelo[2].style.backgroundColor = cor_cinza;
+    amarelo[6].style.backgroundColor = cor_cinza;
+    amarelo[8].style.backgroundColor = cor_cinza;
     valorP = 3;
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 64) {
+    valorP = 0;
+    valorV = 0;
     movimentoPeixe();
     return;
   }
@@ -1561,35 +1644,38 @@ function fase_inicial(){
   }
 
   if (contadorEtapa == 66) {
-    mensagem.innerHTML = "Topo concluido com sucesso!"
+    mensagem.innerHTML = "Topo amarelo completo clique no cubo novamente, e pule a etapa as outras etapas"
     contadorEtapa++;
     return;
   }
 
-  // alternativa 5
-
+  // Posição 5.
   if (contadorEtapa == 67) {
+    titulo.innerHTML = "Posição 5:";
+    azul[2].style.backgroundColor = cor_amarelo;
+    vermelho[0].style.backgroundColor = cor_cinza;
+    vermelho[2].style.backgroundColor = cor_cinza;
+    verde[0].style.backgroundColor = cor_amarelo;
+    laranja[0].style.backgroundColor = cor_amarelo;
+    laranja[2].style.backgroundColor = cor_amarelo;
     amarelo[0].style.backgroundColor = cor_cinza;
     amarelo[2].style.backgroundColor = cor_cinza;
     amarelo[6].style.backgroundColor = cor_cinza;
     amarelo[8].style.backgroundColor = cor_cinza;
-    laranja[0].style.backgroundColor = cor_amarelo;
-    laranja[2].style.backgroundColor = cor_amarelo;
-    azul[2].style.backgroundColor = cor_amarelo;
-    verde[0].style.backgroundColor = cor_amarelo;
-    vermelho[0].style.backgroundColor = cor_cinza;
-    vermelho[2].style.backgroundColor = cor_cinza;
     contadorEtapa++;
     valorP = 4;
     return;
   }
 
   if (contadorEtapa == 68) {
+    valorP = 0;
+    valorV = 0;
     movimentoPeixe();
     return;
   }
 
   if (contadorEtapa == 69) {
+    mensagem.innerHTML = "Sempre que o topo amarelo parecer este peixinho, sempre o coloque nessa formação:";
     Ulinha();
     contadorEtapa++;
     return;
@@ -1601,35 +1687,37 @@ function fase_inicial(){
   }
 
   if (contadorEtapa == 71) {
-    mensagem.innerHTML = "Montado amarelos!"
+    mensagem.innerHTML = "Topo amarelo completo! <br> clique no cubo novamente, e pule a etapa as outras etapas";
     contadorEtapa++;
     return;
   }
 
-  // Alternativa 6
-
+  // Posição 6.
   if (contadorEtapa == 72) {
-    mensagem.innerHTML = "Outra vez"
+    titulo.innerHTML = "Posição 6:";
+    azul[2].style.backgroundColor = cor_cinza;
+    vermelho[0].style.backgroundColor = cor_amarelo;
+    verde[0].style.backgroundColor = cor_amarelo;
+    laranja[0].style.backgroundColor = cor_amarelo;
+    laranja[2].style.backgroundColor = cor_cinza;
     amarelo[0].style.backgroundColor = cor_cinza;
     amarelo[2].style.backgroundColor = cor_cinza;
     amarelo[6].style.backgroundColor = cor_amarelo;
     amarelo[8].style.backgroundColor = cor_cinza;
-    vermelho[0].style.backgroundColor = cor_amarelo;
-    verde[0].style.backgroundColor = cor_amarelo;
-    laranja[0].style.backgroundColor = cor_amarelo;
-    azul[2].style.backgroundColor = cor_cinza;
-    laranja[2].style.backgroundColor = cor_cinza;
     valorP = 4;
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 73) {
+    valorP = 0;
+    valorV = 0;
     movimentoPeixe();
     return;
   }
 
   if (contadorEtapa == 74) {
+    mensagem.innerHTML = "Sempre que o topo amarelo parecer este peixinho, sempre o coloque nessa formação:";
     U();
     U();
     contadorEtapa++;
@@ -1642,17 +1730,14 @@ function fase_inicial(){
   }
 
   if (contadorEtapa == 76) {
-    mensagem.innerHTML = "Topo montado novamente!"
+    mensagem.innerHTML = "Topo amarelo completo clique no cubo novamente, e pule a etapa as outras etapas";
     contadorEtapa++;
     return;
   }
 
+  // Posição 7.
   if (contadorEtapa == 77) {
-    mensagem.innerHTML = "Ultima alternativa!"
-    amarelo[0].style.backgroundColor = cor_cinza;
-    amarelo[2].style.backgroundColor = cor_cinza;
-    amarelo[6].style.backgroundColor = cor_amarelo;
-    amarelo[8].style.backgroundColor = cor_cinza;
+    titulo.innerHTML = "Posição 7:";
     azul[2].style.backgroundColor = cor_amarelo;
     vermelho[0].style.backgroundColor = cor_cinza;
     vermelho[2].style.backgroundColor = cor_amarelo;
@@ -1660,27 +1745,41 @@ function fase_inicial(){
     verde[2].style.backgroundColor = cor_amarelo;
     laranja[0].style.backgroundColor = cor_cinza;
     laranja[2].style.backgroundColor = cor_cinza;
+    amarelo[0].style.backgroundColor = cor_cinza;
+    amarelo[2].style.backgroundColor = cor_cinza;
+    amarelo[6].style.backgroundColor = cor_amarelo;
+    amarelo[8].style.backgroundColor = cor_cinza;
     contadorEtapa++;
     valorP = 2;
     return;
   }
 
   if (contadorEtapa == 78) {
+    valorP = 0;
+    valorV = 0;
     movimentoPeixe();
     return;
   }
 
   if (contadorEtapa == 79) {
-    mensagem.innerHTML = "Etapas concluidas com sucesso!"
+    mensagem.innerHTML = "Etapas concluidas com sucesso!";
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 80) {
+    titulo.innerHTML = "Montando as quinas dem seus devidos lugares";
+    mensagem.innerHTML = "Agora temos duas alternativas, ou temos 2 cantos de uma face da mesma cor como o exemplo:, ou não temos. <br> cor meramente ilustrativa, pode ser qualquer cor";
     azul[0].style.backgroundColor = "darkviolet";
     azul[2].style.backgroundColor = "darkviolet";
-    mensagem.innerHTML = "Agora temos duas alternativas, ou temos 2 cantos de uma face da mesma cor como o exemplo:, ou não temos. <br> cor meramente ilustrativa, pode ser qualquer cor"
+    vermelho[2].style.backgroundColor = cor_cinza;
+    verde[2].style.backgroundColor = cor_cinza;
+    amarelo[0].style.backgroundColor = cor_amarelo;
+    amarelo[2].style.backgroundColor = cor_amarelo;
+    amarelo[8].style.backgroundColor = cor_amarelo;
     contadorEtapa++;
+    valorP = 0;
+    valorV = 0;
     return;
   }
 
@@ -1689,11 +1788,14 @@ function fase_inicial(){
     mensagem.innerHTML = "Caso não tenha, faça o movimento:"
     azul[0].style.backgroundColor = cor_cinza;
     azul[2].style.backgroundColor = cor_cinza;
+    valorP = 2;
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 82) {
+    valorP = 0;
+    valorV = 0;
     movimentoL();
     return;
   }
@@ -1709,25 +1811,31 @@ function fase_inicial(){
   if (contadorEtapa == 84) {
     mensagem.innerHTML = "Rotacione o topo do cubo para este lado que possui duas cores iguais olharem para tras como no exemplo: <br> cor meramente ilustrativa, pode ser qualquer cor";
     U()
+    verde[0].style.backgroundColor = "darkviolet";
+    verde[2].style.backgroundColor = "darkviolet";
+    valorP = 3;
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 85) {
+    valorP = 0;
+    valorV = 0;
     movimentoL();
     return;
   }
 
   if (contadorEtapa == 86) {
+    titulo.innerHTML = "Ultima motagem! Montando o que falta!";
     mensagem.innerHTML = "Magicamente você terá os cantos de todas as fazer combinando automaticamente, basta rotacionar para encaixar as cores dos cantos, com seus respectivos lados."
-    laranja[0].style.backgroundColor = cor_verde;
-    laranja[2].style.backgroundColor = cor_verde;
     azul[0].style.backgroundColor = cor_laranja;
     azul[2].style.backgroundColor = cor_laranja;
-    verde[0].style.backgroundColor = cor_vermelho;
-    verde[2].style.backgroundColor = cor_vermelho;
     vermelho[0].style.backgroundColor = cor_azul;
     vermelho[2].style.backgroundColor = cor_azul;
+    verde[0].style.backgroundColor = cor_vermelho;
+    verde[2].style.backgroundColor = cor_vermelho;
+    laranja[0].style.backgroundColor = cor_verde;
+    laranja[2].style.backgroundColor = cor_verde;
     contadorEtapa++;
     return;
   }
@@ -1740,7 +1848,16 @@ function fase_inicial(){
 
   if (contadorEtapa == 88) {
     mensagem.innerHTML = "Pode existir um lado em seu cubo, onde pode ou não existir, uma face já completa com a cor correta como no exemplo: ";
+    azul[0].style.backgroundColor = cor_azul;
+    azul[2].style.backgroundColor = cor_azul;
+    vermelho[0].style.backgroundColor = cor_vermelho;
+    vermelho[2].style.backgroundColor = cor_vermelho;
     vermelho[1].style.backgroundColor = cor_vermelho;
+    verde[0].style.backgroundColor = cor_verde;
+    verde[2].style.backgroundColor = cor_verde;
+    laranja[0].style.backgroundColor = cor_laranja;
+    laranja[2].style.backgroundColor = cor_laranja;
+    valorP = 0;
     contadorEtapa++;
     return;
   }
@@ -1749,11 +1866,14 @@ function fase_inicial(){
   if (contadorEtapa == 89) {
     mensagem.innerHTML = "Mas caso não exista tal face, realize o movimento a seguir que alguma face irá ficar arrumada automaticamente.";
     vermelho[1].style.backgroundColor = cor_cinza;
+    valorP = 1;
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 90) {
+    valorP = 0;
+    valorV = 0;
     movimentoMinerva();
     return;
   }
@@ -1761,12 +1881,15 @@ function fase_inicial(){
   if (contadorEtapa == 91) {
     mensagem.innerHTML = "Feito o movimento, algum dos cantos irá ficar correto.";
     verde[1].style.backgroundColor = cor_verde;
+    valorP = 2;
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 92) {
     mensagem.innerHTML = "Agora, coloque este lado para tras como no exemplo, e realize o movimento novamente.";
+    valorP = 0;
+    valorV = 0;
     contadorEtapa++;
     return;
   }
@@ -1778,14 +1901,16 @@ function fase_inicial(){
 
   if (contadorEtapa == 94) {
     azul[1].style.backgroundColor = cor_azul;
-    laranja[1].style.backgroundColor = cor_laranja;
     vermelho[1].style.backgroundColor = cor_vermelho;
+    laranja[1].style.backgroundColor = cor_laranja;
+    valorP = 0;
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 95) {
-    mensagem.innerHTML = "Se tudo estiver ocorrido corretamente, seu cubo estara montado nesse exato momenento, Parabéns!!"
+    titulo.innerHTML = "Concluído! :)"
+    mensagem.innerHTML = "Se tudo estiver ocorrido corretamente, seu cubo estara montado nesse exato momento, Parabéns!!"
     contadorEtapa = 0;
     return;
   }
