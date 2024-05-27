@@ -1082,6 +1082,60 @@ function reiniciaCuboEstagio1() {
   branco[4].style.background = cor_branco;
 }
 
+// Colocando todas as cores do cubo para cinza com loop, menos os centros da face.
+function reiniciaCuboEstagio2() {
+  reiniciaCuboEstagio1();
+  for (let index = 0; index < 9; index++) {
+    branco[index]. style.backgroundColor = cor_branco;
+  }
+  for (let index = 6; index < 9; index++) {
+    azul[index].style.background = cor_azul;
+    verde[index].style.background = cor_verde;
+    laranja[index].style.background = cor_laranja;
+    vermelho[index].style.background = cor_vermelho;
+  }
+}
+
+// Colocando todas as cores do cubo para cinza com loop, menos os centros da face.
+function reiniciaCuboEstagio3() {
+  reiniciaCuboEstagio2();
+  for (let index = 3; index < 6; index++) {
+    azul[index].style.backgroundColor = cor_azul;
+    verde[index].style.background = cor_verde;
+    laranja[index].style.background = cor_laranja;
+    vermelho[index].style.background = cor_vermelho;
+  }
+}
+
+// SHdgashdjgas
+function reiniciaCuboEstagio4() {
+  reiniciaCuboEstagio3();
+  amarelo[1].style.backgroundColor = cor_amarelo;
+  amarelo[3].style.backgroundColor = cor_amarelo;
+  amarelo[5].style.backgroundColor = cor_amarelo;
+  amarelo[7].style.backgroundColor = cor_amarelo;
+}
+
+//
+function reiniciaCuboEstagio5() {
+  reiniciaCuboEstagio4();
+  for (let index = 0; index < 9; index++) {
+    amarelo[index].style.background = cor_amarelo;
+  }
+}
+
+function reiniciaCuboEstagio6() {
+  reiniciaCuboEstagio5();
+  azul[0].style.backgroundColor = cor_azul;
+  azul[2].style.backgroundColor = cor_azul;
+  vermelho[0].style.backgroundColor = cor_vermelho;
+  vermelho[2].style.backgroundColor = cor_vermelho;
+  verde[0].style.backgroundColor = cor_verde;
+  verde[2].style.backgroundColor = cor_verde;
+  laranja[0].style.backgroundColor = cor_laranja;
+  laranja[2].style.backgroundColor = cor_laranja;
+}
+
 function montandoCubo(){
   if (contadorEtapa == 1) {
     titulo.innerHTML = "Continue clicando no cubo para continuar";
@@ -1162,7 +1216,6 @@ function montandoCubo(){
     verde[7].style.backgroundColor = cor_verde;
     laranja[7].style.backgroundColor = cor_laranja;
     branco[1].style.backgroundColor = cor_branco;
-    branco[2].style.backgroundColor = cor_cinza;
     branco[3].style.backgroundColor = cor_branco;
     branco[5].style.backgroundColor = cor_branco;
     branco[7].style.backgroundColor = cor_branco;
@@ -1195,15 +1248,21 @@ function montandoCubo(){
 
   if (contadorEtapa == 13) {
     mensagem.innerHTML = "Outro emplo que estas peças podem estar, é com o branco virado para cima"
+    reiniciaCuboEstagio1();
     azul[0].style.backgroundColor = cor_laranja;
-    azul[2].style.backgroundColor = cor_cinza;
+    azul[7].style.backgroundColor = cor_azul;
     azul[8].style.backgroundColor = cor_azul;
-    vermelho[0].style.backgroundColor = cor_cinza;
     vermelho[6].style.backgroundColor = cor_vermelho;
+    vermelho[7].style.backgroundColor = cor_vermelho;
+    verde[7].style.backgroundColor = cor_verde;
+    laranja[7].style.backgroundColor = cor_laranja;
     laranja[2].style.backgroundColor = cor_azul;
+    branco[1].style.backgroundColor = cor_branco;
     branco[2].style.backgroundColor = cor_branco;
+    branco[3].style.backgroundColor = cor_branco;
+    branco[5].style.backgroundColor = cor_branco;
+    branco[7].style.backgroundColor = cor_branco;
     amarelo[6].style.backgroundColor = cor_branco;
-    amarelo[8].style.backgroundColor = cor_cinza;
     valorP = 8;
     valorV = 5;
     contadorEtapa++;
@@ -1258,18 +1317,7 @@ function montandoCubo(){
 
   if (contadorEtapa == 21) {
     mensagem.innerHTML = "Feito isso, o cubo ficará assim:";
-    azul[0].style.backgroundColor = cor_cinza;
-    azul[6].style.backgroundColor = cor_azul;
-    vermelho[8].style.backgroundColor = cor_vermelho;
-    verde[6].style.backgroundColor = cor_verde;
-    verde[8].style.backgroundColor = cor_verde;
-    laranja[2].style.backgroundColor = cor_cinza;
-    laranja[6].style.backgroundColor = cor_laranja;
-    laranja[8].style.backgroundColor = cor_laranja;
-    branco[0].style.backgroundColor = cor_branco;
-    branco[6].style.backgroundColor = cor_branco;
-    branco[8].style.backgroundColor = cor_branco;
-    amarelo[6].style.backgroundColor = cor_cinza;
+    reiniciaCuboEstagio2();
     contadorEtapa++;
     return;
   }
@@ -1277,21 +1325,11 @@ function montandoCubo(){
   if (contadorEtapa == 22) {
     titulo.innerHTML = "Montando a segunda linha das cores Azul, vermelho, verde e laranja";
     mensagem.innerHTML = "O próximo passo é arrumas as quinas de duas cores entre os lados coloridos que não possuem a cor amarela <br> Para a direita";
-    azul[0].style.backgroundColor = cor_cinza;
+    reiniciaCuboEstagio2();
     azul[1].style.backgroundColor = cor_azul;
-    azul[6].style.backgroundColor = cor_azul;
-    laranja[2].style.backgroundColor = cor_cinza;
-    laranja[8].style.backgroundColor = cor_laranja;
-    laranja[6].style.backgroundColor = cor_laranja;
-    verde[8].style.backgroundColor = cor_verde;
-    verde[6].style.backgroundColor = cor_verde;
-    vermelho[8].style.backgroundColor = cor_vermelho;
-    branco[6].style.backgroundColor = cor_branco;
-    branco[8].style.backgroundColor = cor_branco;
-    branco[0].style.backgroundColor = cor_branco;
-    amarelo[6].style.backgroundColor = cor_cinza;
     amarelo[7].style.backgroundColor = cor_vermelho;
     valorP = 1;
+    valorV = 10;
     contadorEtapa++;
     return;
   }
@@ -1305,11 +1343,13 @@ function montandoCubo(){
 
   if (contadorEtapa == 24) {
     mensagem.innerHTML = "O próximo passo é arrumas as quinas de duas cores entre os lados coloridos que não possuem a cor amarela <br> Para a esquerda";
+    reiniciaCuboEstagio2();
     azul[1].style.backgroundColor = cor_azul;
     azul[5].style.backgroundColor = cor_azul;
     vermelho[3].style.backgroundColor = cor_vermelho;
     amarelo[7].style.backgroundColor = cor_laranja;
     valorP = 2;
+    valorV = 3;
     contadorEtapa++;
     return;
   }
@@ -1329,11 +1369,11 @@ function montandoCubo(){
 
   if (contadorEtapa == 27) {
     mensagem.innerHTML = "Mas e se o cubo estiver assim?";
-    azul[1].style.backgroundColor = cor_cinza;
+    reiniciaCuboEstagio2();
     azul[3].style.backgroundColor = cor_laranja;
     laranja[5].style.backgroundColor = cor_azul;
-    amarelo[7].style.backgroundColor = cor_cinza;
     valorP = 6;
+    valorV = 4;
     contadorEtapa++;
     return;
   }
@@ -1381,13 +1421,9 @@ function montandoCubo(){
 
   if (contadorEtapa == 34) {
     mensagem.innerHTML = "Ajeitando todos os lados, seu cubo ficará assim:";
-    azul[3].style.backgroundColor = cor_azul;
-    vermelho[5].style.backgroundColor = cor_vermelho;
-    verde[3].style.backgroundColor = cor_verde;
-    verde[5].style.backgroundColor = cor_verde;
-    laranja[5].style.backgroundColor = cor_laranja;
-    laranja[3].style.backgroundColor = cor_laranja;
+    reiniciaCuboEstagio3();
     valorP = 0;
+    valorV = 8;
     contadorEtapa++;
     return;
   }
@@ -1395,15 +1431,13 @@ function montandoCubo(){
   if (contadorEtapa == 35) {
     titulo.innerHTML = "Montando cruz amarela";
     mensagem.innerHTML = "Agora está na hora de ajeitar o topo amarelo não acha? <br> Caso seu cubo não esteja dessa maneira em relação as peças amarelas, pule a etapa";
+    reiniciaCuboEstagio3();
     azul[1].style.backgroundColor = cor_amarelo;
     vermelho[1].style.backgroundColor = cor_amarelo;
-    vermelho[5].style.backgroundColor = cor_vermelho;
     verde[1].style.backgroundColor = cor_amarelo;
-    verde[3].style.backgroundColor = cor_verde;
-    verde[5].style.backgroundColor = cor_verde;
-    laranja[3].style.backgroundColor = cor_laranja;
     laranja[1].style.backgroundColor = cor_amarelo;
-    valorP = 7;
+    valorP = 2;
+    valorV = 2;
     contadorEtapa++;
     return;
   }
@@ -1423,25 +1457,41 @@ function montandoCubo(){
 
   if (contadorEtapa == 38) {
     mensagem.innerHTML = "Rotacione o topo do cubo(U2) ficando como no cubo abaixo, e repita o movimento anterior <br> Caso seu cubo não esteja dessa maneira em relação as peças amarelas, pule a etapa";
-    U()
-    U()
+    reiniciaCuboEstagio3();
+    azul[1].style.backgroundColor = cor_amarelo;
+    vermelho[1].style.backgroundColor = cor_amarelo;
+    amarelo[1].style.backgroundColor = cor_amarelo;
+    amarelo[3].style.backgroundColor = cor_amarelo;
+    valorP = 1;
+    valorV = 4;
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 39) {
+    valorP = 0;
+    valorV = 0;
     movimentoCruzA();
     return;
   }
 
   if (contadorEtapa == 40) {
     mensagem.innerHTML = "Agora ficará com uma linha no cubo, repita mais uma vez, para que faça a cruz amarela <br> Caso seu cubo não esteja dessa maneira em relação as peças amarelas, pule a etapa"
+    reiniciaCuboEstagio3();
+    azul[1].style.backgroundColor = cor_amarelo;
+    verde[1].style.backgroundColor = cor_amarelo;
+    amarelo[3].style.backgroundColor = cor_amarelo;
+    amarelo[5].style.backgroundColor = cor_amarelo;
+    valorP = 2;
+    valorV = 3;
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 41) {
     movimentoCruzA();
+    valorP = 0;
+    valorV = 0;
     return;
   }
 
@@ -1455,19 +1505,13 @@ function montandoCubo(){
   if (contadorEtapa == 43) {
     titulo.innerHTML = "Colorindo todo o topo de amarelo";
     mensagem.innerHTML = "Neste momentos podemos ter diversas posições das peças amarelas <br> Porem usamos somente uma sequencia de movimentos para montar completar os amarelos no topo. <br> Caso seu cubo não esteja como no cubo abaixo, é só ir pulando a etapa até ficar igual";
-    azul[0].style.backgroundColor = cor_amarelo;
-    azul[1].style.backgroundColor = cor_cinza;
-    vermelho[1].style.backgroundColor = cor_cinza;
-    verde[1].style.backgroundColor = cor_cinza;
-    verde[2].style.backgroundColor = cor_amarelo;
-    laranja[1].style.backgroundColor = cor_cinza;
-    amarelo[1].style.backgroundColor = cor_amarelo;
-    amarelo[3].style.backgroundColor = cor_amarelo;
-    amarelo[5].style.backgroundColor = cor_amarelo;
-    amarelo[7].style.backgroundColor = cor_amarelo;
+    reiniciaCuboEstagio4();
+    azul[0].style.backgroundColor = cor_amarelo;    
+    verde[2].style.backgroundColor = cor_amarelo;    
     amarelo[2].style.backgroundColor = cor_amarelo;
     amarelo[8].style.backgroundColor = cor_amarelo;
     valorP = 6;
+    valorV = 4;
     contadorEtapa++;
     return;
   }
@@ -1514,17 +1558,13 @@ function montandoCubo(){
   // Posição 2.
   if (contadorEtapa == 50) {
     titulo.innerHTML = "Posição 2:";
+    reiniciaCuboEstagio4();
     azul[0].style.backgroundColor = cor_amarelo;
     vermelho[2].style.backgroundColor = cor_amarelo;
-    verde[0].style.backgroundColor = cor_cinza;
-    verde[2].style.backgroundColor = cor_cinza;
-    laranja[0].style.backgroundColor = cor_cinza;
-    laranja[2].style.backgroundColor = cor_cinza;
     amarelo[0].style.backgroundColor = cor_amarelo;
-    amarelo[2].style.backgroundColor = cor_cinza;
-    amarelo[6].style.backgroundColor = cor_cinza;
     amarelo[8].style.backgroundColor = cor_amarelo;
     valorP = 5;
+    valorV = 8;
     contadorEtapa++;
     return;    
   }
@@ -1563,15 +1603,14 @@ function montandoCubo(){
   // Posição 3.
   if (contadorEtapa == 56) {
     titulo.innerHTML = "Posição 3:";
+    reiniciaCuboEstagio4();
     azul[0].style.backgroundColor = cor_amarelo;
     azul[2].style.backgroundColor = cor_amarelo;
-    vermelho[2].style.backgroundColor = cor_cinza;
     amarelo[0].style.backgroundColor = cor_amarelo;
     amarelo[2].style.backgroundColor = cor_amarelo;
-    amarelo[6].style.backgroundColor = cor_cinza;
-    amarelo[8].style.backgroundColor = cor_cinza;
     contadorEtapa++;
     valorP = 6;
+    valorV = 7;
     return;
   }
 
@@ -1616,17 +1655,13 @@ function montandoCubo(){
   // Posição 4.
   if (contadorEtapa == 63) {
     titulo.innerHTML = "Posição 4:";
-    azul[0].style.backgroundColor = cor_cinza;
-    azul[2].style.backgroundColor = cor_cinza;
+    reiniciaCuboEstagio4();
     vermelho[0].style.backgroundColor = cor_amarelo;
     vermelho[2].style.backgroundColor = cor_amarelo;
     laranja[0].style.backgroundColor = cor_amarelo;
     laranja[2].style.backgroundColor = cor_amarelo;
-    amarelo[0].style.backgroundColor = cor_cinza;
-    amarelo[2].style.backgroundColor = cor_cinza;
-    amarelo[6].style.backgroundColor = cor_cinza;
-    amarelo[8].style.backgroundColor = cor_cinza;
     valorP = 3;
+    valorV = 8;
     contadorEtapa++;
     return;
   }
@@ -1652,18 +1687,14 @@ function montandoCubo(){
   // Posição 5.
   if (contadorEtapa == 67) {
     titulo.innerHTML = "Posição 5:";
+    reiniciaCuboEstagio4();
     azul[2].style.backgroundColor = cor_amarelo;
-    vermelho[0].style.backgroundColor = cor_cinza;
-    vermelho[2].style.backgroundColor = cor_cinza;
     verde[0].style.backgroundColor = cor_amarelo;
     laranja[0].style.backgroundColor = cor_amarelo;
     laranja[2].style.backgroundColor = cor_amarelo;
-    amarelo[0].style.backgroundColor = cor_cinza;
-    amarelo[2].style.backgroundColor = cor_cinza;
-    amarelo[6].style.backgroundColor = cor_cinza;
-    amarelo[8].style.backgroundColor = cor_cinza;
     contadorEtapa++;
     valorP = 4;
+    valorV = 5;
     return;
   }
 
@@ -1695,16 +1726,13 @@ function montandoCubo(){
   // Posição 6.
   if (contadorEtapa == 72) {
     titulo.innerHTML = "Posição 6:";
-    azul[2].style.backgroundColor = cor_cinza;
+    reiniciaCuboEstagio4();
     vermelho[0].style.backgroundColor = cor_amarelo;
     verde[0].style.backgroundColor = cor_amarelo;
     laranja[0].style.backgroundColor = cor_amarelo;
-    laranja[2].style.backgroundColor = cor_cinza;
-    amarelo[0].style.backgroundColor = cor_cinza;
-    amarelo[2].style.backgroundColor = cor_cinza;
     amarelo[6].style.backgroundColor = cor_amarelo;
-    amarelo[8].style.backgroundColor = cor_cinza;
     valorP = 4;
+    valorV = 6;
     contadorEtapa++;
     return;
   }
@@ -1738,19 +1766,14 @@ function montandoCubo(){
   // Posição 7.
   if (contadorEtapa == 77) {
     titulo.innerHTML = "Posição 7:";
+    reiniciaCuboEstagio4();
     azul[2].style.backgroundColor = cor_amarelo;
-    vermelho[0].style.backgroundColor = cor_cinza;
     vermelho[2].style.backgroundColor = cor_amarelo;
-    verde[0].style.backgroundColor = cor_cinza;
     verde[2].style.backgroundColor = cor_amarelo;
-    laranja[0].style.backgroundColor = cor_cinza;
-    laranja[2].style.backgroundColor = cor_cinza;
-    amarelo[0].style.backgroundColor = cor_cinza;
-    amarelo[2].style.backgroundColor = cor_cinza;
     amarelo[6].style.backgroundColor = cor_amarelo;
-    amarelo[8].style.backgroundColor = cor_cinza;
     contadorEtapa++;
     valorP = 2;
+    valorV = 6;
     return;
   }
 
@@ -1770,25 +1793,21 @@ function montandoCubo(){
   if (contadorEtapa == 80) {
     titulo.innerHTML = "Montando as quinas dem seus devidos lugares";
     mensagem.innerHTML = "Agora temos duas alternativas, ou temos 2 cantos de uma face da mesma cor como o exemplo:, ou não temos. <br> cor meramente ilustrativa, pode ser qualquer cor";
+    reiniciaCuboEstagio5();
     azul[0].style.backgroundColor = "darkviolet";
     azul[2].style.backgroundColor = "darkviolet";
-    vermelho[2].style.backgroundColor = cor_cinza;
-    verde[2].style.backgroundColor = cor_cinza;
-    amarelo[0].style.backgroundColor = cor_amarelo;
-    amarelo[2].style.backgroundColor = cor_amarelo;
-    amarelo[8].style.backgroundColor = cor_amarelo;
     contadorEtapa++;
     valorP = 0;
-    valorV = 0;
+    valorV = 4;
     return;
   }
 
 
   if (contadorEtapa == 81) {
     mensagem.innerHTML = "Caso não tenha, faça o movimento:"
-    azul[0].style.backgroundColor = cor_cinza;
-    azul[2].style.backgroundColor = cor_cinza;
+    reiniciaCuboEstagio5();
     valorP = 2;
+    valorV = 2;
     contadorEtapa++;
     return;
   }
@@ -1810,10 +1829,11 @@ function montandoCubo(){
 
   if (contadorEtapa == 84) {
     mensagem.innerHTML = "Rotacione o topo do cubo para este lado que possui duas cores iguais olharem para tras como no exemplo: <br> cor meramente ilustrativa, pode ser qualquer cor";
-    U()
+    reiniciaCuboEstagio5();
     verde[0].style.backgroundColor = "darkviolet";
     verde[2].style.backgroundColor = "darkviolet";
     valorP = 3;
+    valorV = 4;
     contadorEtapa++;
     return;
   }
@@ -1848,16 +1868,9 @@ function montandoCubo(){
 
   if (contadorEtapa == 88) {
     mensagem.innerHTML = "Pode existir um lado em seu cubo, onde pode ou não existir, uma face já completa com a cor correta como no exemplo: ";
-    azul[0].style.backgroundColor = cor_azul;
-    azul[2].style.backgroundColor = cor_azul;
-    vermelho[0].style.backgroundColor = cor_vermelho;
-    vermelho[2].style.backgroundColor = cor_vermelho;
-    vermelho[1].style.backgroundColor = cor_vermelho;
-    verde[0].style.backgroundColor = cor_verde;
-    verde[2].style.backgroundColor = cor_verde;
-    laranja[0].style.backgroundColor = cor_laranja;
-    laranja[2].style.backgroundColor = cor_laranja;
+    reiniciaCuboEstagio6();
     valorP = 0;
+    valorV = 5;
     contadorEtapa++;
     return;
   }
@@ -1865,8 +1878,9 @@ function montandoCubo(){
 
   if (contadorEtapa == 89) {
     mensagem.innerHTML = "Mas caso não exista tal face, realize o movimento a seguir que alguma face irá ficar arrumada automaticamente.";
-    vermelho[1].style.backgroundColor = cor_cinza;
+    reiniciaCuboEstagio6();
     valorP = 1;
+    valorV = 2;
     contadorEtapa++;
     return;
   }
@@ -1880,8 +1894,10 @@ function montandoCubo(){
 
   if (contadorEtapa == 91) {
     mensagem.innerHTML = "Feito o movimento, algum dos cantos irá ficar correto.";
+    reiniciaCuboEstagio6();
     verde[1].style.backgroundColor = cor_verde;
     valorP = 2;
+    valorV = 3;
     contadorEtapa++;
     return;
   }
@@ -1900,10 +1916,13 @@ function montandoCubo(){
   }
 
   if (contadorEtapa == 94) {
+    reiniciaCuboEstagio6();
     azul[1].style.backgroundColor = cor_azul;
     vermelho[1].style.backgroundColor = cor_vermelho;
+    verde[1].style.backgroundColor = cor_verde;
     laranja[1].style.backgroundColor = cor_laranja;
     valorP = 0;
+    valorV = 4;
     contadorEtapa++;
     return;
   }
@@ -1911,6 +1930,7 @@ function montandoCubo(){
   if (contadorEtapa == 95) {
     titulo.innerHTML = "Concluído! :)"
     mensagem.innerHTML = "Se tudo estiver ocorrido corretamente, seu cubo estara montado nesse exato momento, Parabéns!!"
+    valorV = 1;
     contadorEtapa = 0;
     return;
   }
