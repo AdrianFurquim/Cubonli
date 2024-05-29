@@ -762,174 +762,210 @@ let comandos = document.querySelector(".comandos_montagem");
 // Movimento Right para ajeitar os lados das faces azul, verde, vermelho e laranja.
 function movimentoPrimarioR() {
   if (contadorMovimento1 == 0) {
+    comandos.innerHTML = 
+    "<div id='comando1'>U</div> - <div id='comando2'>R</div> - <div id='comando3'>U</div> - <div id='comando4'>R'</div> - <div id='comando5'>U'</div> -  <div id='comando6'>F'</div> - <div id='comando7'>U'</div> - <div id='comando8'>F</div>";
+    document.getElementById('comando1').style.color = "rgb(86, 218, 86)";
     U();
     contadorMovimento1++;
     return;
   }
 
   if (contadorMovimento1 == 1) {
+    document.getElementById('comando2').style.color = "rgb(86, 218, 86)";
     R();
     contadorMovimento1++;
     return;
   }
 
   if (contadorMovimento1 == 2) {
+    document.getElementById('comando3').style.color = "rgb(86, 218, 86)";
     U();
     contadorMovimento1++;
     return;
   }
 
   if (contadorMovimento1 == 3) {
+    document.getElementById('comando4').style.color = "rgb(86, 218, 86)";
     Rlinha();
     contadorMovimento1++
     return;
   }
 
   if (contadorMovimento1 == 4) {
+    document.getElementById('comando5').style.color = "rgb(86, 218, 86)";
     Ulinha();
     contadorMovimento1++
     return;
   }
 
   if (contadorMovimento1 == 5) {
+    document.getElementById('comando6').style.color = "rgb(86, 218, 86)";
     Flinha();
     contadorMovimento1++
     return;
   }
 
   if (contadorMovimento1 == 6) {
+    document.getElementById('comando7').style.color = "rgb(86, 218, 86)";
     Ulinha();
     contadorMovimento1++
     return;
   }
 
   if (contadorMovimento1 == 7) {
+    document.getElementById('comando8').style.color = "rgb(86, 218, 86)";
     F();
     contadorMovimento1 = 0;
     contadorEtapa++;
   }
+  comandos.innerHTML = "";
 }
 // Movimento Left para ajeitar os lados das faces azul, verde, vermelho e laranja.
 function movimentoPrimarioL() {
   if (contadorMovimento1 == 0) {
+    comandos.innerHTML = "<div id='comando1'>U'</div> - <div id='comando2'>L'</div> - <div id='comando3'>U'</div> - <div id='comando4'>L</div> - <div id='comando5'>U</div> - <div id='comando6'>F</div> - <div id='comando7'>U</div> - <div id='comando8'>F'</div>";
+    document.getElementById('comando1').style.color = "rgb(86, 218, 86)";
     Ulinha();
     contadorMovimento1++;
     return;
   }
 
   if (contadorMovimento1 == 1) {
+    document.getElementById('comando2').style.color = "rgb(86, 218, 86)";
     Llinha();
     contadorMovimento1++;
     return;
   }
 
   if (contadorMovimento1 == 2) {
+    document.getElementById('comando3').style.color = "rgb(86, 218, 86)";
     Ulinha();
     contadorMovimento1++;
     return;
   }
 
   if (contadorMovimento1 == 3) {
+    document.getElementById('comando4').style.color = "rgb(86, 218, 86)";
     L();
     contadorMovimento1++
     return;
   }
 
   if (contadorMovimento1 == 4) {
+    document.getElementById('comando5').style.color = "rgb(86, 218, 86)";
     U();
     contadorMovimento1++
     return;
   }
 
   if (contadorMovimento1 == 5) {
+    document.getElementById('comando6').style.color = "rgb(86, 218, 86)";
     F();
     contadorMovimento1++
     return;
   }
 
   if (contadorMovimento1 == 6) {
+    document.getElementById('comando7').style.color = "rgb(86, 218, 86)";
     U();
     contadorMovimento1++
     return;
   }
 
   if (contadorMovimento1 == 7) {
+    document.getElementById('comando8').style.color = "rgb(86, 218, 86)";
     Flinha();
     contadorMovimento1 = 0;
     contadorEtapa++;
   }
+  comandos.innerHTML = "";
 }
 // Movimento para montar a cruz amarela no cubo.
 function movimentoCruzA() {
   if (contadorMovimento2 == 0) {
+    comandos.innerHTML = "<div id='comando1'>F</div> - <div id='comando2'>R</div> - <div id='comando3'>U</div> - <div id='comando4'>R'</div> - <div id='comando5'>U'</div> - <div id='comando6'>F'</div>";
+    document.getElementById('comando1').style.color = "rgb(86, 218, 86)";
     F();
     contadorMovimento2++;
     return;
   }
 
   if (contadorMovimento2 == 1) {
+    document.getElementById('comando2').style.color = "rgb(86, 218, 86)";
     R();
     contadorMovimento2++;
     return;
   }
 
   if (contadorMovimento2 == 2) {
+    document.getElementById('comando3').style.color = "rgb(86, 218, 86)";
     U();
     contadorMovimento2++;
     return;
   }
 
   if (contadorMovimento2 == 3) {
+    document.getElementById('comando4').style.color = "rgb(86, 218, 86)";
     Rlinha();
     contadorMovimento2++;
     return;
   }
 
   if (contadorMovimento2 == 4) {
+    document.getElementById('comando5').style.color = "rgb(86, 218, 86)";
     Ulinha();
     contadorMovimento2++;
     return;
   }
 
   if (contadorMovimento2 == 5) {
+    document.getElementById('comando6').style.color = "rgb(86, 218, 86)";
     Flinha();
     contadorMovimento2 = 0;
     contadorEtapa++;
   }
+  comandos.innerHTML = "";
 }
 // Movimento para completar o topo do cubo inteiro de amarelo
 function movimentoPeixe() {
   if (contadorMovimento4 == 0) {
+    comandos.innerHTML = "<div id='comando1'>R</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div> - <div id='comando4'>U</div> - <div id='comando5'>R</div> - <div id='comando6'>U2</div> - <div id='comando7'>R'</div>"
+    document.getElementById('comando1').style.color = "rgb(86, 218, 86)";
     R();
     contadorMovimento4++
     return;
   }
   
   if (contadorMovimento4 == 1) {
+    document.getElementById('comando2').style.color = "rgb(86, 218, 86)";
     U();
     contadorMovimento4++
     return;
   }
 
   if (contadorMovimento4 == 2) {
+    document.getElementById('comando3').style.color = "rgb(86, 218, 86)";
     Rlinha();
     contadorMovimento4++
     return;
   }
 
   if (contadorMovimento4 == 3) {
+    document.getElementById('comando4').style.color = "rgb(86, 218, 86)";
     U()
     contadorMovimento4++
     return;
   }
 
   if (contadorMovimento4 == 4) {
+    document.getElementById('comando5').style.color = "rgb(86, 218, 86)";
     R()
     contadorMovimento4++
     return;
   }
 
   if (contadorMovimento4 == 5) {
+    document.getElementById('comando6').style.color = "rgb(86, 218, 86)";
     U()
     U()
     contadorMovimento4++
@@ -937,32 +973,40 @@ function movimentoPeixe() {
   }
 
   if (contadorMovimento4 == 6) {
+    document.getElementById('comando7').style.color = "rgb(86, 218, 86)";
     Rlinha()
     contadorEtapa++;
     contadorMovimento4 = 0;
   }
+  comandos.innerHTML = "";
 }
 // Movimento para encaixar os cantos superiores dos lados azul, verde, vermelho e laranja corretamente.
 function movimentoL() {
   if (contadorMovimento5 == 0) {
+    comandos.innerHTML = 
+    "<div id='comando1'>R'</div> - <div id='comando2'>F</div> - <div id='comando3'>R'</div> - <div id='comando4'>B2</div> - <div id='comando5'>R</div> - <div id='comando6'>F'</div> - <div id='comando7'>R'</div> - <div id='comando8'>B2</div> - <div id='comando9'>R2</div>";
+    document.getElementById('comando1').style.color = "rgb(86, 218, 86)";
     Rlinha();
     contadorMovimento5++
     return;
   }
   
   if (contadorMovimento5 == 1) {
+    document.getElementById('comando2').style.color = "rgb(86, 218, 86)";
     F();
     contadorMovimento5++
     return;
   }
 
   if (contadorMovimento5 == 2) {
+    document.getElementById('comando3').style.color = "rgb(86, 218, 86)";
     Rlinha();
     contadorMovimento5++
     return;
   }
 
   if (contadorMovimento5 == 3) {
+    document.getElementById('comando4').style.color = "rgb(86, 218, 86)";
     B();
     B();
     contadorMovimento5++
@@ -970,24 +1014,28 @@ function movimentoL() {
   }
 
   if (contadorMovimento5 == 4) {
+    document.getElementById('comando5').style.color = "rgb(86, 218, 86)";
     R();
     contadorMovimento5++
     return;
   }
 
   if (contadorMovimento5 == 5) {
+    document.getElementById('comando6').style.color = "rgb(86, 218, 86)";
     Flinha();
     contadorMovimento5++
     return;
   }
 
   if (contadorMovimento5 == 6) {
+    document.getElementById('comando7').style.color = "rgb(86, 218, 86)";
     Rlinha()
     contadorMovimento5++
     return;
   }
 
   if (contadorMovimento5 == 7) {
+    document.getElementById('comando8').style.color = "rgb(86, 218, 86)";
     B();
     B();
     contadorMovimento5++
@@ -995,64 +1043,78 @@ function movimentoL() {
   }
 
   if (contadorMovimento5 == 8) {
+    document.getElementById('comando9').style.color = "rgb(86, 218, 86)";
     R();
     R();
     contadorEtapa++;
     contadorMovimento5 = 0;
   }
+  comandos.innerHTML = "";
 }
 // Movimento final para ajeitar a ultima peça para terminar.
 function movimentoMinerva() {
   if (contadorMovimento6 == 0) {
+    comandos.innerHTML = 
+    "<div id='comando1'>F2</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div> - <div id='comando4'>L</div> - <div id='comando5'>F2</div> - <div id='comando6'>R</div> - <div id='comando7'>L'</div> - <div id='comando8'>U</div> - <div id='comando9'>F2</div>";
+    document.getElementById('comando1').style.color = "rgb(86, 218, 86)";
     F();
     F();
     contadorMovimento6++;
     return;
   }
   if (contadorMovimento6 == 1) {
-    U()
     mensagem.innerHTML = "Nesta etapa, é feito um U ou U', gire o topo para o lado em que se encaixa a cor, caso não encaixe a cor do meio do topo, com o meio da face do seu cubo <br> gire para qualquer lado uma vez o topo."
+    document.getElementById('comando2').style.color = "rgb(86, 218, 86)";
+    U()
     contadorMovimento6++;
     return;
   }
   if (contadorMovimento6 == 2) {
+    document.getElementById('comando3').style.color = "rgb(86, 218, 86)";
     Rlinha()
     contadorMovimento6++;
     return;
   }
   if (contadorMovimento6 == 3) {
+    document.getElementById('comando4').style.color = "rgb(86, 218, 86)";
     L();
     contadorMovimento6++;
     return;
   }
   if (contadorMovimento6 == 4) {
+    document.getElementById('comando5').style.color = "rgb(86, 218, 86)";
     F();
     F();
     contadorMovimento6++;
     return;
   }
   if (contadorMovimento6 == 5) {
+    document.getElementById('comando6').style.color = "rgb(86, 218, 86)";
     R();    
     contadorMovimento6++;
     return;
   }
   if (contadorMovimento6 == 6) {
+    document.getElementById('comando7').style.color = "rgb(86, 218, 86)";
     Llinha();
     contadorMovimento6++;
     return;
   }
   if (contadorMovimento6 == 7) {
     mensagem.innerHTML = "Realize a rotação do topo, dependendo de como irá enxaicar as faces do lado esquerdo e direito."
+    document.getElementById('comando8').style.color = "rgb(86, 218, 86)";
     U();
     contadorMovimento6++;
     return;
   }
   if (contadorMovimento6 == 8) {
+    document.getElementById('comando9').style.color = "rgb(86, 218, 86)";
     F();
     F();
     contadorMovimento6 = 0;
     contadorEtapa++;
   }
+  comandos.innerHTML = "";
 }
 // Função para pular a etapa.
 function pularEtapa() {

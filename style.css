@@ -24,8 +24,13 @@ footer{
     background-color: rgb(20, 20, 97);
     display: flex;
     width: 100%;
-    justify-content: center;
-    color: #fff;
+    justify-content: space-between;
+    color: #fff;    
+}
+
+footer p{
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
 nav{
@@ -289,4 +294,43 @@ nav h1{
 .etapas{
     display: flex;
     justify-content: space-between;
+}
+
+.comandos_montagem{
+    display: flex;
+    gap: 0.5em;
+    font-size: 2em;
+    width: 40%;
+    margin: auto;
+    justify-content: center;
+}
+
+.movimentoF{
+    color: rgb(86, 218, 86);
+}
+
+.conteiner_ideia{
+    color: #000;
+    background-color: #fff;
+    width: 85%;
+    margin: auto;
+    padding: 25px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: start;
+    display: flex;
+}
+
+.conteiner_ideia img{
+    width: 20%;
+    border-radius: 20px;
+}
+
+.conteiner_ideia p{
+    margin-right: 2em;
+    margin-left: 2em;
+}
+
+.sobre{
+    display: block;
 }
