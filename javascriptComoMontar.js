@@ -762,8 +762,6 @@ let comandos = document.querySelector(".comandos_montagem");
 // Movimento Right para ajeitar os lados das faces azul, verde, vermelho e laranja.
 function movimentoPrimarioR() {
   if (contadorMovimento1 == 0) {
-    comandos.innerHTML = 
-    "<div id='comando1'>U</div> - <div id='comando2'>R</div> - <div id='comando3'>U</div> - <div id='comando4'>R'</div> - <div id='comando5'>U'</div> -  <div id='comando6'>F'</div> - <div id='comando7'>U'</div> - <div id='comando8'>F</div>";
     document.getElementById('comando1').style.color = "rgb(86, 218, 86)";
     U();
     contadorMovimento1++;
@@ -820,10 +818,10 @@ function movimentoPrimarioR() {
   }
   comandos.innerHTML = "";
 }
+
 // Movimento Left para ajeitar os lados das faces azul, verde, vermelho e laranja.
 function movimentoPrimarioL() {
   if (contadorMovimento1 == 0) {
-    comandos.innerHTML = "<div id='comando1'>U'</div> - <div id='comando2'>L'</div> - <div id='comando3'>U'</div> - <div id='comando4'>L</div> - <div id='comando5'>U</div> - <div id='comando6'>F</div> - <div id='comando7'>U</div> - <div id='comando8'>F'</div>";
     document.getElementById('comando1').style.color = "rgb(86, 218, 86)";
     Ulinha();
     contadorMovimento1++;
@@ -880,10 +878,10 @@ function movimentoPrimarioL() {
   }
   comandos.innerHTML = "";
 }
+
 // Movimento para montar a cruz amarela no cubo.
 function movimentoCruzA() {
   if (contadorMovimento2 == 0) {
-    comandos.innerHTML = "<div id='comando1'>F</div> - <div id='comando2'>R</div> - <div id='comando3'>U</div> - <div id='comando4'>R'</div> - <div id='comando5'>U'</div> - <div id='comando6'>F'</div>";
     document.getElementById('comando1').style.color = "rgb(86, 218, 86)";
     F();
     contadorMovimento2++;
@@ -926,10 +924,10 @@ function movimentoCruzA() {
   }
   comandos.innerHTML = "";
 }
+
 // Movimento para completar o topo do cubo inteiro de amarelo
 function movimentoPeixe() {
   if (contadorMovimento4 == 0) {
-    comandos.innerHTML = "<div id='comando1'>R</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div> - <div id='comando4'>U</div> - <div id='comando5'>R</div> - <div id='comando6'>U2</div> - <div id='comando7'>R'</div>"
     document.getElementById('comando1').style.color = "rgb(86, 218, 86)";
     R();
     contadorMovimento4++
@@ -980,11 +978,10 @@ function movimentoPeixe() {
   }
   comandos.innerHTML = "";
 }
+
 // Movimento para encaixar os cantos superiores dos lados azul, verde, vermelho e laranja corretamente.
 function movimentoL() {
-  if (contadorMovimento5 == 0) {
-    comandos.innerHTML = 
-    "<div id='comando1'>R'</div> - <div id='comando2'>F</div> - <div id='comando3'>R'</div> - <div id='comando4'>B2</div> - <div id='comando5'>R</div> - <div id='comando6'>F'</div> - <div id='comando7'>R'</div> - <div id='comando8'>B2</div> - <div id='comando9'>R2</div>";
+  if (contadorMovimento5 == 0) {    
     document.getElementById('comando1').style.color = "rgb(86, 218, 86)";
     Rlinha();
     contadorMovimento5++
@@ -1051,11 +1048,10 @@ function movimentoL() {
   }
   comandos.innerHTML = "";
 }
+
 // Movimento final para ajeitar a ultima peça para terminar.
 function movimentoMinerva() {
   if (contadorMovimento6 == 0) {
-    comandos.innerHTML = 
-    "<div id='comando1'>F2</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div> - <div id='comando4'>L</div> - <div id='comando5'>F2</div> - <div id='comando6'>R</div> - <div id='comando7'>L'</div> - <div id='comando8'>U</div> - <div id='comando9'>F2</div>";
     document.getElementById('comando1').style.color = "rgb(86, 218, 86)";
     F();
     F();
@@ -1116,11 +1112,14 @@ function movimentoMinerva() {
   }
   comandos.innerHTML = "";
 }
+
 // Função para pular a etapa.
 function pularEtapa() {
   contadorEtapa = contadorEtapa + valorP;
   montandoCubo();
 }
+
+// Função para voltar a etapa.
 function voltarEtapa() {
   contadorEtapa = contadorEtapa - valorV;
   montandoCubo();
@@ -1169,7 +1168,7 @@ function reiniciaCuboEstagio3() {
   }
 }
 
-// SHdgashdjgas
+// Reinicia o cubo de modo em que a cruz amarela já esteja formada.
 function reiniciaCuboEstagio4() {
   reiniciaCuboEstagio3();
   amarelo[1].style.backgroundColor = cor_amarelo;
@@ -1178,7 +1177,7 @@ function reiniciaCuboEstagio4() {
   amarelo[7].style.backgroundColor = cor_amarelo;
 }
 
-//
+// Reinicia o cudo de modo em que o topo amarelo esteja feito.
 function reiniciaCuboEstagio5() {
   reiniciaCuboEstagio4();
   for (let index = 0; index < 9; index++) {
@@ -1186,6 +1185,7 @@ function reiniciaCuboEstagio5() {
   }
 }
 
+// Reinicia o cubo na etapa final do processo.
 function reiniciaCuboEstagio6() {
   reiniciaCuboEstagio5();
   azul[0].style.backgroundColor = cor_azul;
@@ -1198,6 +1198,7 @@ function reiniciaCuboEstagio6() {
   laranja[2].style.backgroundColor = cor_laranja;
 }
 
+// Função que realiza ao montar o cubo mágico.
 function montandoCubo(){
   if (contadorEtapa == 1) {
     titulo.innerHTML = "Continue clicando no cubo para continuar";
@@ -1270,6 +1271,7 @@ function montandoCubo(){
   if (contadorEtapa == 9) {
     titulo.innerHTML = "Ajeitando quinas do branco"
     mensagem.innerHTML = "Agora vamos ver o movimento para colocar as quinas do branco corretamente";
+    comandos.innerHTML = "<div id='comando1'>R</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div>";
     reiniciaCuboEstagio1();
     azul[2].style.backgroundColor = cor_azul;
     azul[7].style.backgroundColor = cor_azul;
@@ -1289,6 +1291,7 @@ function montandoCubo(){
   }
 
   if (contadorEtapa == 10) {
+    document.getElementById('comando1').style.color = "rgb(86, 218, 86)";
     valorP = 0;
     valorV = 0;
     R()
@@ -1297,12 +1300,14 @@ function montandoCubo(){
   }
 
   if (contadorEtapa == 11) {
+    document.getElementById('comando2').style.color = "rgb(86, 218, 86)";
     U()
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 12) {
+    document.getElementById('comando3').style.color = "rgb(86, 218, 86)";
     Rlinha()
     contadorEtapa++;
     return;
@@ -1310,6 +1315,7 @@ function montandoCubo(){
 
   if (contadorEtapa == 13) {
     mensagem.innerHTML = "Outro emplo que estas peças podem estar, é com o branco virado para cima"
+    comandos.innerHTML = "<div id='comando1'>L'</div> - <div id='comando2'>U</div> - <div id='comando3'>L</div>";
     reiniciaCuboEstagio1();
     azul[0].style.backgroundColor = cor_laranja;
     azul[7].style.backgroundColor = cor_azul;
@@ -1332,6 +1338,7 @@ function montandoCubo(){
   }
 
   if (contadorEtapa == 14) {
+    document.getElementById('comando1').style.color = "rgb(86, 218, 86)";
     valorP = 0;
     valorV = 0;
     Llinha()
@@ -1340,45 +1347,52 @@ function montandoCubo(){
   }
 
   if (contadorEtapa == 15) {
+    document.getElementById('comando2').style.color = "rgb(86, 218, 86)";
     U()
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 16) {
+    document.getElementById('comando3').style.color = "rgb(86, 218, 86)";
     L()
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 17) {
-    U()
-    U()
+    comandos.innerHTML = "<div id='comando1'>L'</div> - <div id='comando2'>U'</div> - <div id='comando3'>L</div>";
+    U();
+    U();
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 18) {
-    Llinha()
+    document.getElementById('comando1').style.color = "rgb(86, 218, 86)";
+    Llinha();
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 19) {
-    Ulinha()
+    document.getElementById('comando2').style.color = "rgb(86, 218, 86)";
+    Ulinha();
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 20) {
+    document.getElementById('comando3').style.color = "rgb(86, 218, 86)";
     mensagem.innerHTML = "Agora é fazer os mesmos movimentos para arrumar todos os 4 lados";
-    L()
+    L();
     contadorEtapa++;
     return;
   }
 
   if (contadorEtapa == 21) {
     mensagem.innerHTML = "Feito isso, o cubo ficará assim:";
+    comandos.innerHTML = "";
     reiniciaCuboEstagio2();
     contadorEtapa++;
     return;
@@ -1387,6 +1401,8 @@ function montandoCubo(){
   if (contadorEtapa == 22) {
     titulo.innerHTML = "Montando a segunda linha das cores Azul, vermelho, verde e laranja";
     mensagem.innerHTML = "O próximo passo é arrumas as quinas de duas cores entre os lados coloridos que não possuem a cor amarela <br> Para a direita";
+    comandos.innerHTML = 
+    "<div id='comando1'>U</div> - <div id='comando2'>R</div> - <div id='comando3'>U</div> - <div id='comando4'>R'</div> - <div id='comando5'>U'</div> -  <div id='comando6'>F'</div> - <div id='comando7'>U'</div> - <div id='comando8'>F</div>";
     reiniciaCuboEstagio2();
     azul[1].style.backgroundColor = cor_azul;
     amarelo[7].style.backgroundColor = cor_vermelho;
@@ -1405,6 +1421,8 @@ function montandoCubo(){
 
   if (contadorEtapa == 24) {
     mensagem.innerHTML = "O próximo passo é arrumas as quinas de duas cores entre os lados coloridos que não possuem a cor amarela <br> Para a esquerda";
+    comandos.innerHTML = 
+    "<div id='comando1'>U'</div> - <div id='comando2'>L'</div> - <div id='comando3'>U'</div> - <div id='comando4'>L</div> - <div id='comando5'>U</div> - <div id='comando6'>F</div> - <div id='comando7'>U</div> - <div id='comando8'>F'</div>";
     reiniciaCuboEstagio2();
     azul[1].style.backgroundColor = cor_azul;
     azul[5].style.backgroundColor = cor_azul;
@@ -1442,6 +1460,8 @@ function montandoCubo(){
 
   if (contadorEtapa == 28) {
     mensagem.innerHTML = "Realize o movimento aprendido da mesma maneira, como se alguma outra fosse substituir ela! <br> Cor roxa meramente ilustrativa.";
+    comandos.innerHTML = 
+    "<div id='comando1'>U'</div> - <div id='comando2'>L'</div> - <div id='comando3'>U'</div> - <div id='comando4'>L</div> - <div id='comando5'>U</div> - <div id='comando6'>F</div> - <div id='comando7'>U</div> - <div id='comando8'>F'</div>";
     azul[1].style.backgroundColor = "darkviolet";
     amarelo[7].style.backgroundColor = "darkviolet";
     valorP = 0;
@@ -1457,6 +1477,8 @@ function montandoCubo(){
 
   if (contadorEtapa == 30) {
     mensagem.innerHTML = "Agora que tiramos ela daquele lugar, podemos encaixar ela corretamente:"
+    comandos.innerHTML = 
+    "<div id='comando1'>U'</div> - <div id='comando2'>L'</div> - <div id='comando3'>U'</div> - <div id='comando4'>L</div> - <div id='comando5'>U</div> - <div id='comando6'>F</div> - <div id='comando7'>U</div> - <div id='comando8'>F'</div>";
     contadorEtapa++;
     return;
   }
@@ -1475,6 +1497,7 @@ function montandoCubo(){
 
   if (contadorEtapa == 33) {
     mensagem.innerHTML = "Encaixada corretamente!"
+    comandos.innerHTML = "";
     verde[1].style.backgroundColor = cor_cinza;
     amarelo[1].style.backgroundColor = cor_cinza;
     contadorEtapa++;
@@ -1483,6 +1506,7 @@ function montandoCubo(){
 
   if (contadorEtapa == 34) {
     mensagem.innerHTML = "Ajeitando todos os lados, seu cubo ficará assim:";
+    comandos.innerHTML = "";
     reiniciaCuboEstagio3();
     valorP = 0;
     valorV = 8;
@@ -1493,6 +1517,7 @@ function montandoCubo(){
   if (contadorEtapa == 35) {
     titulo.innerHTML = "Montando cruz amarela";
     mensagem.innerHTML = "Agora está na hora de ajeitar o topo amarelo não acha? <br> Caso seu cubo não esteja dessa maneira em relação as peças amarelas, pule a etapa";
+    comandos.innerHTML = "<div id='comando1'>F</div> - <div id='comando2'>R</div> - <div id='comando3'>U</div> - <div id='comando4'>R'</div> - <div id='comando5'>U'</div> - <div id='comando6'>F'</div>";
     reiniciaCuboEstagio3();
     azul[1].style.backgroundColor = cor_amarelo;
     vermelho[1].style.backgroundColor = cor_amarelo;
@@ -1505,9 +1530,9 @@ function montandoCubo(){
   }
 
   if (contadorEtapa == 36) {
+    movimentoCruzA();
     valorP = 0;
     valorV = 0;
-    movimentoCruzA();
     return;
   }
 
@@ -1519,6 +1544,7 @@ function montandoCubo(){
 
   if (contadorEtapa == 38) {
     mensagem.innerHTML = "Rotacione o topo do cubo(U2) ficando como no cubo abaixo, e repita o movimento anterior <br> Caso seu cubo não esteja dessa maneira em relação as peças amarelas, pule a etapa";
+    comandos.innerHTML = "<div id='comando1'>F</div> - <div id='comando2'>R</div> - <div id='comando3'>U</div> - <div id='comando4'>R'</div> - <div id='comando5'>U'</div> - <div id='comando6'>F'</div>";
     reiniciaCuboEstagio3();
     azul[1].style.backgroundColor = cor_amarelo;
     vermelho[1].style.backgroundColor = cor_amarelo;
@@ -1531,14 +1557,15 @@ function montandoCubo(){
   }
 
   if (contadorEtapa == 39) {
+    movimentoCruzA();
     valorP = 0;
     valorV = 0;
-    movimentoCruzA();
     return;
   }
 
   if (contadorEtapa == 40) {
     mensagem.innerHTML = "Agora ficará com uma linha no cubo, repita mais uma vez, para que faça a cruz amarela <br> Caso seu cubo não esteja dessa maneira em relação as peças amarelas, pule a etapa"
+    comandos.innerHTML = "<div id='comando1'>F</div> - <div id='comando2'>R</div> - <div id='comando3'>U</div> - <div id='comando4'>R'</div> - <div id='comando5'>U'</div> - <div id='comando6'>F'</div>";
     reiniciaCuboEstagio3();
     azul[1].style.backgroundColor = cor_amarelo;
     verde[1].style.backgroundColor = cor_amarelo;
@@ -1559,6 +1586,7 @@ function montandoCubo(){
 
   if (contadorEtapa == 42) {
     mensagem.innerHTML = "Agora O cubo possui uma cruz amarela, estamos quase terminando. <br> Caso não esteja, verifique as etapar novamente, ou ferifique se as peças do cubo estão corretas";
+    comandos.innerHTML = "";
     contadorEtapa++;
     return;
   }
@@ -1567,6 +1595,7 @@ function montandoCubo(){
   if (contadorEtapa == 43) {
     titulo.innerHTML = "Colorindo todo o topo de amarelo";
     mensagem.innerHTML = "Neste momentos podemos ter diversas posições das peças amarelas <br> Porem usamos somente uma sequencia de movimentos para montar completar os amarelos no topo. <br> Caso seu cubo não esteja como no cubo abaixo, é só ir pulando a etapa até ficar igual";
+    comandos.innerHTML = "<div id='comando1'>R</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div> - <div id='comando4'>U</div> - <div id='comando5'>R</div> - <div id='comando6'>U2</div> - <div id='comando7'>R'</div>"
     reiniciaCuboEstagio4();
     azul[0].style.backgroundColor = cor_amarelo;    
     verde[2].style.backgroundColor = cor_amarelo;    
@@ -1588,6 +1617,7 @@ function montandoCubo(){
 
   if (contadorEtapa == 45) {
     mensagem.innerHTML = "Sempre que o topo amarelo parecer este peixinho, sempre o coloque nessa formação:"
+    comandos.innerHTML = "<div id='comando1'>R</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div> - <div id='comando4'>U</div> - <div id='comando5'>R</div> - <div id='comando6'>U2</div> - <div id='comando7'>R'</div>"
     U();
     contadorEtapa++;
     return;
@@ -1599,6 +1629,7 @@ function montandoCubo(){
   }
 
   if (contadorEtapa == 47) {
+    comandos.innerHTML = "<div id='comando1'>R</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div> - <div id='comando4'>U</div> - <div id='comando5'>R</div> - <div id='comando6'>U2</div> - <div id='comando7'>R'</div>"
     U()
     U()
     contadorEtapa++;
@@ -1613,6 +1644,7 @@ function montandoCubo(){
 
   if (contadorEtapa == 49) {
     mensagem.innerHTML = "Topo amarelo completo clique no cubo novamente, e pule a etapa as outras etapas";
+    comandos.innerHTML = "";
     contadorEtapa++;
     return;
   }
@@ -1620,6 +1652,7 @@ function montandoCubo(){
   // Posição 2.
   if (contadorEtapa == 50) {
     titulo.innerHTML = "Posição 2:";
+    comandos.innerHTML = "<div id='comando1'>R</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div> - <div id='comando4'>U</div> - <div id='comando5'>R</div> - <div id='comando6'>U2</div> - <div id='comando7'>R'</div>"
     reiniciaCuboEstagio4();
     azul[0].style.backgroundColor = cor_amarelo;
     vermelho[2].style.backgroundColor = cor_amarelo;
@@ -1639,12 +1672,16 @@ function montandoCubo(){
   }
 
   if (contadorEtapa == 52) {
+    if (contadorMovimento4 == 0) {
+      comandos.innerHTML = "<div id='comando1'>R</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div> - <div id='comando4'>U</div> - <div id='comando5'>R</div> - <div id='comando6'>U2</div> - <div id='comando7'>R'</div>"
+    }
     movimentoPeixe();
     return;
   }
 
   if (contadorEtapa == 53) {
     mensagem.innerHTML = "Sempre que o topo amarelo parecer este peixinho, sempre o coloque nessa formação:"
+    comandos.innerHTML = "<div id='comando1'>R</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div> - <div id='comando4'>U</div> - <div id='comando5'>R</div> - <div id='comando6'>U2</div> - <div id='comando7'>R'</div>"
     U()
     U()
     contadorEtapa++;
@@ -1657,7 +1694,8 @@ function montandoCubo(){
   }
 
   if (contadorEtapa == 55) {
-    mensagem.innerHTML = "Topo amarelo completo clique no cubo novamente, e pule a etapa as outras etapas"
+    mensagem.innerHTML = "Topo amarelo completo clique no cubo novamente, e pule a etapa as outras etapas";
+    comandos.innerHTML = "";
     contadorEtapa++;
     return;
   }
@@ -1665,6 +1703,7 @@ function montandoCubo(){
   // Posição 3.
   if (contadorEtapa == 56) {
     titulo.innerHTML = "Posição 3:";
+    comandos.innerHTML = "<div id='comando1'>R</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div> - <div id='comando4'>U</div> - <div id='comando5'>R</div> - <div id='comando6'>U2</div> - <div id='comando7'>R'</div>"
     reiniciaCuboEstagio4();
     azul[0].style.backgroundColor = cor_amarelo;
     azul[2].style.backgroundColor = cor_amarelo;
@@ -1685,6 +1724,7 @@ function montandoCubo(){
 
   if (contadorEtapa == 58) {
     mensagem.innerHTML = "Sempre que o topo amarelo parecer este peixinho, sempre o coloque nessa formação:"
+    comandos.innerHTML = "<div id='comando1'>R</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div> - <div id='comando4'>U</div> - <div id='comando5'>R</div> - <div id='comando6'>U2</div> - <div id='comando7'>R'</div>"
     Ulinha();
     contadorEtapa++;
     return;
@@ -1697,6 +1737,7 @@ function montandoCubo(){
 
   if (contadorEtapa == 60) {
     mensagem.innerHTML = "Sempre que o topo amarelo parecer este peixinho, sempre o coloque nessa formação:"
+    comandos.innerHTML = "<div id='comando1'>R</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div> - <div id='comando4'>U</div> - <div id='comando5'>R</div> - <div id='comando6'>U2</div> - <div id='comando7'>R'</div>"
     U()
     U()
     contadorEtapa++;
@@ -1710,6 +1751,7 @@ function montandoCubo(){
 
   if (contadorEtapa == 62) {
     mensagem.innerHTML = "Topo amarelo completo clique no cubo novamente, e pule a etapa as outras etapas"
+    comandos.innerHTML = "";
     contadorEtapa++;
     return;
   }
@@ -1717,6 +1759,7 @@ function montandoCubo(){
   // Posição 4.
   if (contadorEtapa == 63) {
     titulo.innerHTML = "Posição 4:";
+    comandos.innerHTML = "<div id='comando1'>R</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div> - <div id='comando4'>U</div> - <div id='comando5'>R</div> - <div id='comando6'>U2</div> - <div id='comando7'>R'</div>"
     reiniciaCuboEstagio4();
     vermelho[0].style.backgroundColor = cor_amarelo;
     vermelho[2].style.backgroundColor = cor_amarelo;
@@ -1736,12 +1779,16 @@ function montandoCubo(){
   }
 
   if (contadorEtapa == 65) {
+    if (contadorMovimento4 == 0) {
+      comandos.innerHTML = "<div id='comando1'>R</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div> - <div id='comando4'>U</div> - <div id='comando5'>R</div> - <div id='comando6'>U2</div> - <div id='comando7'>R'</div>"
+    }
     movimentoPeixe();
     return;
   }
 
   if (contadorEtapa == 66) {
     mensagem.innerHTML = "Topo amarelo completo clique no cubo novamente, e pule a etapa as outras etapas"
+    comandos.innerHTML = "";
     contadorEtapa++;
     return;
   }
@@ -1749,6 +1796,7 @@ function montandoCubo(){
   // Posição 5.
   if (contadorEtapa == 67) {
     titulo.innerHTML = "Posição 5:";
+    comandos.innerHTML = "<div id='comando1'>R</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div> - <div id='comando4'>U</div> - <div id='comando5'>R</div> - <div id='comando6'>U2</div> - <div id='comando7'>R'</div>"
     reiniciaCuboEstagio4();
     azul[2].style.backgroundColor = cor_amarelo;
     verde[0].style.backgroundColor = cor_amarelo;
@@ -1769,6 +1817,7 @@ function montandoCubo(){
 
   if (contadorEtapa == 69) {
     mensagem.innerHTML = "Sempre que o topo amarelo parecer este peixinho, sempre o coloque nessa formação:";
+    comandos.innerHTML = "<div id='comando1'>R</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div> - <div id='comando4'>U</div> - <div id='comando5'>R</div> - <div id='comando6'>U2</div> - <div id='comando7'>R'</div>"
     Ulinha();
     contadorEtapa++;
     return;
@@ -1781,6 +1830,7 @@ function montandoCubo(){
 
   if (contadorEtapa == 71) {
     mensagem.innerHTML = "Topo amarelo completo! <br> clique no cubo novamente, e pule a etapa as outras etapas";
+    comandos.innerHTML = "";
     contadorEtapa++;
     return;
   }
@@ -1788,6 +1838,7 @@ function montandoCubo(){
   // Posição 6.
   if (contadorEtapa == 72) {
     titulo.innerHTML = "Posição 6:";
+    comandos.innerHTML = "<div id='comando1'>R</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div> - <div id='comando4'>U</div> - <div id='comando5'>R</div> - <div id='comando6'>U2</div> - <div id='comando7'>R'</div>"
     reiniciaCuboEstagio4();
     vermelho[0].style.backgroundColor = cor_amarelo;
     verde[0].style.backgroundColor = cor_amarelo;
@@ -1808,6 +1859,7 @@ function montandoCubo(){
 
   if (contadorEtapa == 74) {
     mensagem.innerHTML = "Sempre que o topo amarelo parecer este peixinho, sempre o coloque nessa formação:";
+    comandos.innerHTML = "<div id='comando1'>R</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div> - <div id='comando4'>U</div> - <div id='comando5'>R</div> - <div id='comando6'>U2</div> - <div id='comando7'>R'</div>"
     U();
     U();
     contadorEtapa++;
@@ -1821,6 +1873,7 @@ function montandoCubo(){
 
   if (contadorEtapa == 76) {
     mensagem.innerHTML = "Topo amarelo completo clique no cubo novamente, e pule a etapa as outras etapas";
+    comandos.innerHTML = "";
     contadorEtapa++;
     return;
   }
@@ -1828,6 +1881,7 @@ function montandoCubo(){
   // Posição 7.
   if (contadorEtapa == 77) {
     titulo.innerHTML = "Posição 7:";
+    comandos.innerHTML = "<div id='comando1'>R</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div> - <div id='comando4'>U</div> - <div id='comando5'>R</div> - <div id='comando6'>U2</div> - <div id='comando7'>R'</div>"
     reiniciaCuboEstagio4();
     azul[2].style.backgroundColor = cor_amarelo;
     vermelho[2].style.backgroundColor = cor_amarelo;
@@ -1848,6 +1902,7 @@ function montandoCubo(){
 
   if (contadorEtapa == 79) {
     mensagem.innerHTML = "Etapas concluidas com sucesso!";
+    comandos.innerHTML = "";
     contadorEtapa++;
     return;
   }
@@ -1855,6 +1910,8 @@ function montandoCubo(){
   if (contadorEtapa == 80) {
     titulo.innerHTML = "Montando as quinas dem seus devidos lugares";
     mensagem.innerHTML = "Agora temos duas alternativas, ou temos 2 cantos de uma face da mesma cor como o exemplo:, ou não temos. <br> cor meramente ilustrativa, pode ser qualquer cor";
+    comandos.innerHTML = 
+    "<div id='comando1'>R'</div> - <div id='comando2'>F</div> - <div id='comando3'>R'</div> - <div id='comando4'>B2</div> - <div id='comando5'>R</div> - <div id='comando6'>F'</div> - <div id='comando7'>R'</div> - <div id='comando8'>B2</div> - <div id='comando9'>R2</div>";
     reiniciaCuboEstagio5();
     azul[0].style.backgroundColor = "darkviolet";
     azul[2].style.backgroundColor = "darkviolet";
@@ -1883,6 +1940,7 @@ function montandoCubo(){
 
   if (contadorEtapa == 83) {
     mensagem.innerHTML = "Ao finalizar esta sequência, iremos ter o lado esquerdo, com dois cantos de mesma cor.";
+    comandos.innerHTML = "";
     laranja[0].style.backgroundColor = "darkviolet";
     laranja[2].style.backgroundColor = "darkviolet";
     contadorEtapa++;
@@ -1891,6 +1949,8 @@ function montandoCubo(){
 
   if (contadorEtapa == 84) {
     mensagem.innerHTML = "Rotacione o topo do cubo para este lado que possui duas cores iguais olharem para tras como no exemplo: <br> cor meramente ilustrativa, pode ser qualquer cor";
+    comandos.innerHTML = 
+    "<div id='comando1'>R'</div> - <div id='comando2'>F</div> - <div id='comando3'>R'</div> - <div id='comando4'>B2</div> - <div id='comando5'>R</div> - <div id='comando6'>F'</div> - <div id='comando7'>R'</div> - <div id='comando8'>B2</div> - <div id='comando9'>R2</div>";
     reiniciaCuboEstagio5();
     verde[0].style.backgroundColor = "darkviolet";
     verde[2].style.backgroundColor = "darkviolet";
@@ -1910,6 +1970,7 @@ function montandoCubo(){
   if (contadorEtapa == 86) {
     titulo.innerHTML = "Ultima motagem! Montando o que falta!";
     mensagem.innerHTML = "Magicamente você terá os cantos de todas as fazer combinando automaticamente, basta rotacionar para encaixar as cores dos cantos, com seus respectivos lados."
+    comandos.innerHTML = "";
     azul[0].style.backgroundColor = cor_laranja;
     azul[2].style.backgroundColor = cor_laranja;
     vermelho[0].style.backgroundColor = cor_azul;
@@ -1940,6 +2001,8 @@ function montandoCubo(){
 
   if (contadorEtapa == 89) {
     mensagem.innerHTML = "Mas caso não exista tal face, realize o movimento a seguir que alguma face irá ficar arrumada automaticamente.";
+    comandos.innerHTML = 
+    "<div id='comando1'>F2</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div> - <div id='comando4'>L</div> - <div id='comando5'>F2</div> - <div id='comando6'>R</div> - <div id='comando7'>L'</div> - <div id='comando8'>U</div> - <div id='comando9'>F2</div>";
     reiniciaCuboEstagio6();
     valorP = 1;
     valorV = 2;
@@ -1956,6 +2019,7 @@ function montandoCubo(){
 
   if (contadorEtapa == 91) {
     mensagem.innerHTML = "Feito o movimento, algum dos cantos irá ficar correto.";
+    comandos.innerHTML = "";
     reiniciaCuboEstagio6();
     verde[1].style.backgroundColor = cor_verde;
     valorP = 2;
@@ -1966,6 +2030,8 @@ function montandoCubo(){
 
   if (contadorEtapa == 92) {
     mensagem.innerHTML = "Agora, coloque este lado para tras como no exemplo, e realize o movimento novamente.";
+    comandos.innerHTML = 
+    "<div id='comando1'>F2</div> - <div id='comando2'>U</div> - <div id='comando3'>R'</div> - <div id='comando4'>L</div> - <div id='comando5'>F2</div> - <div id='comando6'>R</div> - <div id='comando7'>L'</div> - <div id='comando8'>U</div> - <div id='comando9'>F2</div>";
     valorP = 0;
     valorV = 0;
     contadorEtapa++;
@@ -1979,6 +2045,7 @@ function montandoCubo(){
 
   if (contadorEtapa == 94) {
     reiniciaCuboEstagio6();
+    comandos.innerHTML = "";
     azul[1].style.backgroundColor = cor_azul;
     vermelho[1].style.backgroundColor = cor_vermelho;
     verde[1].style.backgroundColor = cor_verde;

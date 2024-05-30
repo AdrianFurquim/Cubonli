@@ -312,21 +312,25 @@ nav h1{
 .conteiner_ideia{
     color: #000;
     background-color: #fff;
-    width: 85%;
+    width: 80%;
     margin: auto;
     padding: 25px;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
     text-align: start;
     display: flex;
 }
 
 .conteiner_ideia img{
-    width: 20%;
+    width: 15%;
     border-radius: 20px;
 }
 
 .conteiner_ideia p{
+    margin-right: 4em;
+    margin-left: 4em;
+}
+.conteiner_ideia h1{
     margin-right: 2em;
     margin-left: 2em;
 }
