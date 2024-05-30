@@ -3,6 +3,10 @@
     --translateZ: 150px;
 }
 
+:root {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -41,16 +45,48 @@ nav{
     font-family: helvetica;
 }
 
+.teste{
+    margin-left: -20px;
+    animation: moveToLeft 2s ease-out forwards;
+}
+
+@keyframes moveToLeft {
+    from {
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+    to {
+        transform: translate(25%, 0);
+        opacity: 1;
+    }
+}
+
 .introducao_conteiner{
     background-color: #fff;
     color: #000;
     border-radius: 20px;
     margin: auto;
+    margin-right: 0;
     padding: 25px;
     width: 40%;
     text-align: start;
     font-family: helvetica;
     box-shadow: 10px 10px 10px black;
+    animation: moveToRight 2s ease-out forwards;
+}
+
+@keyframes moveToRight {
+    from {
+        top: 0%;
+        left: 0;
+        opacity: 0;
+    }
+    to {
+        
+        transform: translate(-25%, 0);
+        opacity: 1;
+    }
 }
 
 .introducao_conteiner p {
