@@ -10,7 +10,7 @@
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    
     font-family: "Poppins", sans-serif;
     background: #d8d8d8;
     text-align: center;
@@ -45,7 +45,7 @@ nav{
     font-family: helvetica;
 }
 
-.teste{
+.cube-aparicao{
     margin-left: -20px;
     animation: moveToLeft 2s ease-out forwards;
 }
@@ -104,6 +104,9 @@ nav{
 .cube-container {
     perspective: 1000px;
     margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 25vh;
 }
   
 .cube-container .cube {
@@ -225,7 +228,6 @@ nav{
     height: 2.3em;
     background-color: #444444;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px #000;
 }
 
 .seta{
@@ -351,10 +353,24 @@ nav h1{
     width: 80%;
     margin: auto;
     padding: 25px;
-    margin-top: 1.5em;
+    margin-top: 3em;
     margin-bottom: 1.5em;
     text-align: start;
     display: flex;
+    
+}
+
+@keyframes conteinerIdeiaButton {
+    from {
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+    to {
+        
+        transform: translate(0, -10%);
+        opacity: 1;
+    }
 }
 
 .conteiner_ideia img{
@@ -373,4 +389,8 @@ nav h1{
 
 .sobre{
     display: block;
+}
+
+.logo{
+    text-decoration: none;
 }

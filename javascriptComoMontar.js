@@ -1200,6 +1200,13 @@ function reiniciaCuboEstagio6() {
 
 // Função que realiza ao montar o cubo mágico.
 function montandoCubo(){
+  // Estrutura de IFs para verificar em qual etapa o cubo esta.
+  // Existe uma estrutura padrão, onde temos os IFs com os contadores de etapas.
+  // O titulo, mensagem e comando servem para aparecer as frases acima do cubo ao longo da montagem.
+  // As funções são para realizar pequenos movimentos, como U, L', ou movimentos completos para alguma finalidade finall, como o movimentoMinerva.
+  // Contador Etapa ++ para que possa avançar a etapa.
+  // Ao longo da montagem, vamos montando as cores para no final termos o cubo 100% completo.
+  
   if (contadorEtapa == 1) {
     titulo.innerHTML = "Continue clicando no cubo para continuar";
     reiniciaCuboEstagio1();
