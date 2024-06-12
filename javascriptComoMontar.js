@@ -33,21 +33,23 @@ const handleMouseMove = (event) => {
 };
 window.addEventListener("mousemove", handleMouseMove);
 
+// Função para utilização do teclado ao montar, passar e pular etapas do cubo.
 function handleKeyDown(event) {
   switch (event.key) {
     case 'v':
-      // R
+      // Ao clicar a tecla V, volta a etapa do cubo.
       voltarEtapa()
       break;
     case 'p':
-      // R Linha
+      // Ao clicar a tecla P, passa uma etapa do cubo.
       pularEtapa();
       break;
     case 'c':
-      // R Linha
+      // Ao clicar a tecla C, o programa Continua montando o cubo.
       montandoCubo();
       break;
     default:
+      // Caso clique em uma tecla que não foi mapeada.
       console.log(`Tecla não mapeada: ${event.key}`);
   }
 }
