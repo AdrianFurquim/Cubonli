@@ -84,16 +84,6 @@ function handleKeyDown(event) {
   }
 }
 
-function minhaFuncaoA() {
-  console.log('Função para a tecla "a"');
-  // Código da função para a tecla "a"
-}
-
-function minhaFuncaoB() {
-  console.log('Função para a tecla "b"');
-  // Código da função para a tecla "b"
-}
-
 window.addEventListener('keydown', handleKeyDown);
 
 function R() {

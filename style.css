@@ -37,6 +37,16 @@ footer p{
     margin-right: 1em;
 }
 
+.movi_link{
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.movi_link:hover{
+    color: rgb(209, 209, 255);
+}
+
 nav{
     background-color: rgb(20, 20, 97);
     display: flex;
@@ -228,6 +238,12 @@ nav{
     height: 2.3em;
     background-color: #444444;
     border-radius: 10px;
+    display: block;
+}
+
+.tecla p, .movimento p{
+    margin-top: 30%;
+    
 }
 
 .seta{

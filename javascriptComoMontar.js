@@ -33,6 +33,27 @@ const handleMouseMove = (event) => {
 };
 window.addEventListener("mousemove", handleMouseMove);
 
+function handleKeyDown(event) {
+  switch (event.key) {
+    case 'v':
+      // R
+      voltarEtapa()
+      break;
+    case 'p':
+      // R Linha
+      pularEtapa();
+      break;
+    case 'c':
+      // R Linha
+      montandoCubo();
+      break;
+    default:
+      console.log(`Tecla não mapeada: ${event.key}`);
+  }
+}
+
+window.addEventListener('keydown', handleKeyDown);
+
 // Movimento R do cubo.
 function R() {
   // Capturando os valores de background-color no momento da execução
