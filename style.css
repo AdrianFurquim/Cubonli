@@ -10,9 +10,8 @@
 body {
     margin: 0;
     padding: 0;
-    
-    font-family: "Poppins", sans-serif;
-    background: #d8d8d8;
+    font-family: helvetica;
+    background: #ecebeb;
     text-align: center;
 }
 
@@ -20,8 +19,9 @@ header {
     color: #fff;
     display: flex;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     justify-content: space-between;
+    min-height: 90vh;
 }
 
 footer{
@@ -29,12 +29,39 @@ footer{
     display: flex;
     width: 100%;
     justify-content: space-between;
-    color: #fff;    
+    color: #fff;
+    margin-top: auto;
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 footer p{
     margin-left: 1em;
     margin-right: 1em;
+}
+
+footer div{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: start;
+    margin: auto;
+    margin-top: 1em;
+}
+
+footer div a{
+    text-decoration: none;
+    color: #c9c9c9;
+    margin-bottom: 1em;
+    transition: 0.3s;
+}
+
+.creator{
+    width: 25%;
+}
+
+footer div a:hover{
+    color: #fff;
 }
 
 .movi_link{
@@ -56,33 +83,32 @@ nav{
 }
 
 .cube-aparicao{
-    margin-left: -20px;
+    margin-left: 0em;
     animation: moveToLeft 2s ease-out forwards;
 }
 
 @keyframes moveToLeft {
     from {
         top: 0;
-        left: 0;
         opacity: 0;
     }
     to {
-        transform: translate(25%, 0);
+        
         opacity: 1;
     }
 }
 
 .introducao_conteiner{
-    background-color: #fff;
-    color: #000;
+    background-color: transparent;
+    font-size: 3em;
+    color: gray;
     border-radius: 20px;
     margin: auto;
-    margin-right: 0;
+    margin-right: -3em;
     padding: 25px;
     width: 40%;
-    text-align: start;
+    text-align: end;
     font-family: helvetica;
-    box-shadow: 10px 10px 10px black;
     animation: moveToRight 2s ease-out forwards;
 }
 
@@ -93,14 +119,12 @@ nav{
         opacity: 0;
     }
     to {
-        
         transform: translate(-25%, 0);
         opacity: 1;
     }
 }
 
 .introducao_conteiner p {
-    width: 90%;
     font-size: 20px;
 }
 
@@ -262,7 +286,7 @@ nav h1{
     display: flex;
     gap: 2em;
     margin: auto;
-    margin-right: 2.5em;
+    margin-right: 5.5em;
 }
 
 .caminhos a{
@@ -336,9 +360,24 @@ nav h1{
     transition: 0.5s;
 }
 
+
 .btn button:hover{
     width: 12em;
     background-color: rgb(3, 3, 224);
+}
+
+.btn_home button{
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    color: gray;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn_home button:hover{
+    color: rgb(0, 0, 151);
+    font-size: 25px;
 }
 
 .como_montar_comando{
@@ -409,4 +448,5 @@ nav h1{
 
 .logo{
     text-decoration: none;
+    margin-left: 5.5em;
 }
