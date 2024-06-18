@@ -58,6 +58,7 @@ footer div a{
 
 .creator{
     width: 25%;
+    color: #c9c9c9;
 }
 
 footer div a:hover{
@@ -75,11 +76,13 @@ footer div a:hover{
 }
 
 nav{
-    background-color: rgb(20, 20, 97);
+    /* background-color: rgb(20, 20, 97); */
+    background-color: transparent;
     display: flex;
     width: 100%;
     justify-content: space-around;
     font-family: helvetica;
+    color: #444444;
 }
 
 .cube-aparicao{
@@ -278,7 +281,7 @@ nav{
 /* Fim Comandos de tecla do cubo */
 nav h1{
     margin-left: 1em;
-    color: #fff;
+    color: #444444;
     font-size: 2em;
 }
 
@@ -290,7 +293,7 @@ nav h1{
 }
 
 .caminhos a{
-    color: #fff;
+    color: #444444;
     text-decoration: none;
 }
 
@@ -300,6 +303,7 @@ nav h1{
 
 .caminhos li a{
     position: relative;
+    transition: 0.3s;
 }
 
 .caminhos li a::before{
@@ -308,8 +312,8 @@ nav h1{
     width: 100%;
     height: 2px;
     bottom: 0;
-    color: #fff;
-    background-color: #fff;
+    color: #444444;
+    background-color: #444444;
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
@@ -321,6 +325,15 @@ nav h1{
     visibility: visible;
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
+}
+
+.caminhos li a:hover{
+    font-size: 20px;
+}
+
+.logo{
+    text-decoration: none;
+    margin-left: 5.5em;
 }
 
 .btn{
@@ -444,9 +457,4 @@ nav h1{
 
 .sobre{
     display: block;
-}
-
-.logo{
-    text-decoration: none;
-    margin-left: 5.5em;
 }
