@@ -256,26 +256,29 @@ nav{
 .movimento{
     width:2.3em;
     height: 2.3em;
-    background-color: rgb(0, 0, 167);
-    border-radius: 10px;
+    /* background-color: rgb(0, 0, 167); */
+    background-color: #1a1a1a;
+    border-radius: 100%;
 }
 
 .tecla{
     width: 2.3em;
     height: 2.3em;
-    background-color: #444444;
-    border-radius: 10px;
+    background-color: #c9c9c9;
+    color: #444444;
+    border-radius: 10%;
     display: block;
 }
 
 .tecla p, .movimento p{
     margin-top: 30%;
-    
 }
 
 .seta{
     color: #000;
     margin: auto;
+    font-size: 25px;
+    
 }
 
 /* Fim Comandos de tecla do cubo */
@@ -342,13 +345,14 @@ nav h1{
     justify-content: space-around;
 }
 
+/* Como montar ===================================================================================================================================== */
+
 .btn_pular{
     border: none;
     width: 10em;
-    color: #fff;
-    background-color: rgb(0, 0, 151);
-    padding: 15px;
-    border-radius: 10px;
+    color: #e4e4e4;
+    background-color: rgb(81, 81, 255);
+    padding: 15px;    
     font-size: 1em;
     cursor: pointer;
     margin-top: 1em;
@@ -358,25 +362,6 @@ nav h1{
     margin-left: 2em;
     margin-right: 2em;
     text-align: center;
-}
-
-.btn button{
-    border: none;
-    width: 10em;
-    color: #fff;
-    background-color: rgb(0, 0, 151);
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 1em;
-    cursor: pointer;
-    margin-top: 1em;
-    transition: 0.5s;
-}
-
-
-.btn button:hover{
-    width: 12em;
-    background-color: rgb(3, 3, 224);
 }
 
 .btn_home button{
@@ -402,6 +387,14 @@ nav h1{
     justify-content: space-between;
 }
 
+.titulo{
+    color: #353535;
+}
+
+.mensagens{
+    color: #353535;
+}
+
 .comandos_montagem{
     display: flex;
     gap: 0.5em;
@@ -415,46 +408,67 @@ nav h1{
     color: rgb(86, 218, 86);
 }
 
-.conteiner_ideia{
-    color: #000;
-    background-color: #fff;
-    width: 80%;
-    margin: auto;
-    padding: 25px;
-    margin-top: 3em;
-    margin-bottom: 1.5em;
-    text-align: start;
-    display: flex;
-    
+
+/* Sobre  ================================================================================================================================*/
+
+.sobre{
+    display: block;
+    flex-direction: column;
+    animation: conteinerSobre 2s ease-out forwards;
 }
 
-@keyframes conteinerIdeiaButton {
+@keyframes conteinerSobre {
     from {
-        top: 0;
-        left: 0;
         opacity: 0;
     }
     to {
-        
-        transform: translate(0, -10%);
         opacity: 1;
     }
 }
 
-.conteiner_ideia img{
-    width: 15%;
-    border-radius: 20px;
+.conteiner_ideia{
+    color: #353535;
+    background-color: transparent;
+    width: 90%;
+    margin: auto;
+    margin-top: 3em;
+    margin-bottom: 1.5em;
+    display: flex;
+    justify-content: space-between;
 }
 
-.conteiner_ideia p{
-    margin-right: 4em;
-    margin-left: 4em;
+.cubo_sobre{
+    width: 80%;
 }
+
+.sobre_imagem{
+    width: 40%;
+    margin-top: auto;
+    margin-bottom: 3em;
+}
+
+.sobre_comentario{
+    width: 65%;
+    text-align: start;
+}
+
 .conteiner_ideia h1{
-    margin-right: 2em;
-    margin-left: 2em;
+    color: rgb(111, 120, 252);
 }
 
-.sobre{
-    display: block;
+.btn button{
+    border: none;
+    width: 10em;
+    color: blue;
+    background-color: transparent;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 1em;
+    transition: 0.5s;
+}
+
+.btn button:hover{
+    font-size: 20px;
 }
