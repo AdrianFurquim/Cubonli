@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![cubonli_home](https://github.com/AdrianFurquim/Cubonli/assets/116688048/597f974a-28ad-4317-adc7-7302f644577d)
+![cubonli_home](https://github.com/AdrianFurquim/Cubonli/assets/116688048/1c988039-011e-410a-a94f-d8feaffb5c84)
 
 </div>
 
